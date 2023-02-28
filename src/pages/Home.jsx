@@ -3,6 +3,7 @@ import Cartproducts from '../components/Cartproducts';
 import Productsdata from '../Productsdata';
 import { useState} from 'react';
 import Playvideo from '../components/Playvideo';
+import Footer from '../components/Footer';
 
 
 const Home = () => {
@@ -27,7 +28,7 @@ const Home = () => {
           ))}
       </div>
       </div>
-      
+      <Footer/>
     </div>
   )
 }

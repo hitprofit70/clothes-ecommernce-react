@@ -44,3 +44,42 @@
     transform: scale(1.05);
     transition: 0s;
   }
+
+  /* footer */
+  footer {
+    width: 100%;
+    height: 180px;
+    background-color: black;
+    margin-top: 50px;
+    padding: 5px;
+  }
+  
+  footer .container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
+  
+  footer .info-contact {
+    margin-top: 30px;
+  }
+  
+  footer .info-address {
+    margin-top: 30px;
+  }
+  
+  footer .info-policy {
+    margin-top: 30px;
+  }
+  
+  footer .info-social {
+    margin-top: 30px;
+  }
+  
+  footer .info-social svg:hover {
+    transform: scale(1.2);
+    transition: 0s;
+  }
+  
+  footer .info-social .icon {
+    padding: 6px;
+  }
