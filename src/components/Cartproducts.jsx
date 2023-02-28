@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
 const Cartproducts = ({id, productsImg, title, discountPrice, amount, add}) => {
   return (
@@ -9,7 +10,7 @@ const Cartproducts = ({id, productsImg, title, discountPrice, amount, add}) => {
           <h5 className="card-title">{title}</h5>
           <p className="card-discountPrice">{discountPrice}</p>
           <p className="card-price">R{amount}</p>
-          <button className="btn btn-primary" onClick={add}>View</button>
+          <Link to='/cartpage/:id' className="btn btn-primary" onClick={add}>View</Link>
         </div>
     </div>
     </div>

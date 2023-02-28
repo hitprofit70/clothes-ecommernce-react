@@ -8,6 +8,7 @@ import Men from './pages/Men';
 import Women from './pages/Women';
 import Myaccount from './pages/Myaccount'
 import Productpage from './pages/Productpage'
+import CartBag from './pages/CartBag';
 import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
       {
         path: "/cartpage/:id",
         element: <Productpage />,
+      },
+
+      {
+        path: "/cartbag",
+        element: <CartBag />,
       },
     ],
   },

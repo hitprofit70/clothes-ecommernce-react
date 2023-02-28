@@ -10,7 +10,6 @@ const Presale = () => {
       <div className='container'>
       <div className='products-card'>
       <Cartproducts/>
-      <Cartproducts/>
       </div>
       </div>
       <Footer/>
