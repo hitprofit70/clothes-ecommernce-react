@@ -6,7 +6,12 @@ const Presale = () => {
   return (
     <div>
       <Navbar/>
+      <div className='container'>
+      <div className='products-card'>
       <Cartproducts/>
+      <Cartproducts/>
+      </div>
+      </div>
     </div>
   )
 }

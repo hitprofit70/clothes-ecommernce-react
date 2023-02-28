@@ -11,7 +11,8 @@ const Home = () => {
     <div>
       <Navbar/>
       <div className='container mt-5'>
-      <div className='row'>
+        <h2 className='title text-center'>Our Products</h2>
+      <div className='products-card'>
       {products.map((product, index) => (
             <Cartproducts
               key={index} 
