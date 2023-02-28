@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar';
 import Cartproducts from '../components/Cartproducts';
 import Productsdata from '../Productsdata';
 import { useState} from 'react';
+import Playvideo from '../components/Playvideo';
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
   return (
     <div>
       <Navbar/>
+      <Playvideo/>
       <div className='container mt-5'>
         <h2 className='title text-center'>Our Products</h2>
       <div className='products-card'>
