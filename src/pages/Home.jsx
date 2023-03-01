@@ -23,7 +23,6 @@ const Home = () => {
               productsImg={product.productsImg}
               title={product.title}
               amount={product.amount}
-              // addToCart={addToCart}
             />
           ))}
       </div>

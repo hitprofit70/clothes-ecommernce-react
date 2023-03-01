@@ -5,7 +5,7 @@ const Playvideo = () => {
   return (
     <div>
       <div className='play-video'>
-      <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
+      <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' className='video-src'/>
       </div>
     </div>
   )

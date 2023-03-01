@@ -7,6 +7,15 @@
    font-weight: bold;
   }
 
+  /* video src */
+  .video-src {
+    width: 1000px;
+  }
+
+  .play-video {
+    width: 100%;
+  }
+
   /* products */
   .products-card {
     display: grid;
@@ -14,8 +23,8 @@
   }
 
   .card {
-    width: 250px;
-    height: 20px;
+    width: 18rem;
+    height: 20rem;
     transition: 500ms ease-in-out;
   }
 

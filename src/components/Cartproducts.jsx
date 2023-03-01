@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 
-const Cartproducts = ({id, productsImg, title, discountPrice, amount, add}) => {
+const Cartproducts = ({productsImg, title, discountPrice, amount}) => {
   return (
     <div className='container mt-5'>
       <div className="card">
@@ -10,7 +10,7 @@ const Cartproducts = ({id, productsImg, title, discountPrice, amount, add}) => {
           <h5 className="card-title">{title}</h5>
           <p className="card-discountPrice">{discountPrice}</p>
           <p className="card-price">R{amount}</p>
-          <Link to='/cartpage/:id' className="btn btn-primary" onClick={add}>View</Link>
+          <Link to={`/cartpage/${title}`} className="btn btn-primary">View</Link>
         </div>
     </div>
     </div>
