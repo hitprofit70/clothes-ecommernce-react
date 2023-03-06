@@ -18,12 +18,13 @@ const Productview = () => {
       <Navbar />
       <div className="container mt-5">
         {products && (
-          <div className="card">
-            <img src={products.productsImg} alt="..." />
-            <div className="card-body text-center">
-              <h5 className="card-title">{products.title}</h5>
-              <p className="card-price">R{products.amount}</p>
-              <button className="btn btn-primary">AddtoCart</button>
+          <div class="row">
+            <div class="col mt-5">
+              <img src={products.productsImg} alt="" className="cart-card" />
+            </div>
+            <div class="col mt-5">
+              <h5>{products.title}</h5>
+              <h5>R{products.amount}</h5>
             </div>
           </div>
         )}
