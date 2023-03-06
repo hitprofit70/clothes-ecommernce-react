@@ -13,7 +13,6 @@ const Productview = () => {
       return Productsdata.find((p) => p.id === Number(id));
     });
   }, [id]);
-
   return (
     <div>
       <Navbar />
