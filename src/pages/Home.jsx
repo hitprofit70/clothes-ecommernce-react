@@ -1,5 +1,5 @@
 import Navbar from '../components/Navbar';
-import Cartproducts from '../components/Cartproducts';
+import ProductsCard from '../components/ProductsCard';
 import Productsdata from '../Productsdata';
 import { useState} from 'react';
 import Playvideo from '../components/Playvideo';
@@ -17,7 +17,7 @@ const Home = () => {
         <h2 className='title text-center'>Our Products</h2>
       <div className='products-card'>
       {products.map((product, index) => (
-            <Cartproducts
+            <ProductsCard
               key={index} 
               id={product.id}
               productsImg={product.productsImg}

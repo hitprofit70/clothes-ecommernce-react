@@ -7,7 +7,7 @@ import Presale from './pages/Presale';
 import Men from './pages/Men';
 import Women from './pages/Women';
 import Myaccount from './pages/Myaccount'
-import Productpage from './pages/Productpage'
+import Productview from './pages/Productview'
 import CartBag from './pages/CartBag';
 import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 
@@ -35,16 +35,13 @@ const router = createBrowserRouter([
         element: <Myaccount />,
       },
       {
-        path: "/cartpage",
-        element: <Productpage />,
+        path: "/productview",
+        element: <Productview />,
       },
-
       {
-        path: "/cartpage/:id",
-        element: <Productpage />,
+        path: "/productview/:id",
+        element: <Productview />,
       },
-
-
       {
         path: "/cartbag",
         element: <CartBag />,

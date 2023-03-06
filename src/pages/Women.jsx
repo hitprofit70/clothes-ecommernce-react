@@ -1,13 +1,13 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Cartproducts from '../components/Cartproducts';
+import ProductsCard from '../components/ProductsCard';
 import Footer from '../components/Footer';
 
 const Women = () => {
   return (
     <div>
       <Navbar/>
-      <Cartproducts/>
+      <ProductsCard/>
       <Footer/>
     </div>
   )

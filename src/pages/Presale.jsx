@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Cartproducts from '../components/Cartproducts';
+import ProductsCard from '../components/ProductsCard';
 import Footer from '../components/Footer';
 
 const Presale = () => {
@@ -9,7 +9,7 @@ const Presale = () => {
       <Navbar/>
       <div className='container'>
       <div className='products-card'>
-      <Cartproducts/>
+      <ProductsCard/>
       </div>
       </div>
       <Footer/>

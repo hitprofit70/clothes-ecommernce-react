@@ -1,16 +1,16 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import Cartproducts from '../components/Cartproducts';
-import Footer from '../components/Footer';
+import React from "react";
+import Navbar from "../components/Navbar";
+import ProductsCard from "../components/ProductsCard";
+import Footer from "../components/Footer";
 
 const Men = () => {
   return (
     <div>
-      <Navbar/>
-      <Cartproducts/>
-      <Footer/>
+      <Navbar />
+      <ProductsCard />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Men
+export default Men;
