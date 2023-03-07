@@ -26,6 +26,9 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link to="/login" className="nav-link text-white active" aria-current="page" href="#">Login</Link>
               </li>
+              <li className="nav-item">
+                <Link to="/register" className="nav-link text-white active" aria-current="page" href="#">Register</Link>
+              </li>
             </ul>
             <Link to='/cartbag' className='checkout'>
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" className="bi bi-bag-check" viewBox="0 0 16 16">

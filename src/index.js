@@ -6,8 +6,10 @@ import Home from './pages/Home';
 import Presale from './pages/Presale';
 import Men from './pages/Men';
 import Women from './pages/Women';
-import Myaccount from './pages/Myaccount'
-import Productview from './pages/Productview'
+import Myaccount from './pages/Myaccount';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Productview from './pages/Productview';
 import CartBag from './pages/CartBag';
 import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 
@@ -35,8 +37,12 @@ const router = createBrowserRouter([
         element: <Myaccount />,
       },
       {
-        path: "/productview",
-        element: <Productview />,
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
       {
         path: "/productview/:id",
