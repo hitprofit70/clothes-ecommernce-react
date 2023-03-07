@@ -1,221 +1,297 @@
+.navbar-brand {
+  margin-left: 50px;
+}
+
+/* .access-account {
+  margin-left: 300px;
+} */
+
 .checkout svg {
-    margin-top: 15px;
-  }
-  
-  .cartCount {
-   margin-right: 20px;
-   font-weight: bold;
-  }
+  margin-top: 15px;
+  margin-left: 50px;
+}
 
-  /* video src */
-  .video-src {
-    width: 1000px;
-  }
+.d-flex {
+  margin-right: 150px;
+}
 
-  .play-video {
-    width: 100%;
-  }
+.cartCount {
+  margin-right: 100px;
+  font-weight: bold;
 
-  /* products */
-  .products-card {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-  }
+  text-decoration: none;
+}
 
-  .card {
-    width: 18rem;
-    height: 20rem;
-    transition: 500ms ease-in-out;
-  }
+/* video src */
+.video-src {
+  width: 1000px;
+}
 
-  .card img {
-    width: 100%;
-    height: 15rem;
-    object-fit: cover;
-  }
+.play-video {
+  width: 100%;
+}
 
-  .card:hover {
-    transform: scale(1.02);
-    -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
-    box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
-  }
+/* products made by card*/
+.products-card {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
 
-  .cart-title {
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 20px;
-    background-color: gainsboro;
-    text-align: center;
-  }
+.card {
+  width: 18rem;
+  height: 20rem;
+  transition: 500ms ease-in-out;
+}
 
-  .btn:hover {
-    transform: scale(1.05);
-    background: white;
-    transition: 1s;
-  }
+.card img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+}
 
-  /* footer */
-  footer {
-    width: 100%;
-    height: 180px;
-    background-color: black;
-    margin-top: 50px;
-    padding: 5px;
-  }
-  
-  footer .container {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-  }
-  
-  footer .info-contact {
-    margin-top: 30px;
-  }
-  
-  footer .info-address {
-    margin-top: 30px;
-  }
-  
-  footer .info-policy {
-    margin-top: 30px;
-  }
-  
-  footer .info-social {
-    margin-top: 30px;
-  }
-  
-  footer .info-social svg:hover {
-    transform: scale(1.2);
-    transition: 0s;
-  }
-  
-  footer .info-social .icon {
-    padding: 6px;
-  }
+.card:hover {
+  transform: scale(1.02);
+  -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+}
+
+.cart-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+  background-color: gainsboro;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: white;
+  transition: 1s;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  height: 180px;
+  background-color: black;
+  margin-top: 50px;
+  padding: 5px;
+}
+
+footer .container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+footer .info-contact {
+  margin-top: 30px;
+}
+
+footer .info-address {
+  margin-top: 30px;
+}
+
+footer .info-policy {
+  margin-top: 30px;
+}
+
+footer .info-social {
+  margin-top: 30px;
+}
+
+footer .info-social svg:hover {
+  transform: scale(1.2);
+  transition: 0s;
+}
+
+footer .info-social .icon {
+  padding: 6px;
+}
 
 /* login */
-  .login-form {
-    background: whitesmoke;
-    width: 400px;
-    height: 430px;
-    gap: 3rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    border-radius: 5px;
-    padding: 10px;
-  }
-  
-  .login-form h1 {
-    text-align: center;
-  }
-  
-  .login-form span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .login-form input {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    border: none;
-    width: 360px;
-  }
-  
-  .login-form .loginBtn {
-    background-color: rgb(59, 59, 243);
-    padding: 5px;
-    margin: 10px;
-    border-radius: 6px;
-    border: none;
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 140px;
-    margin-right: 140px;
-  }
-  
-  .login-form .loginBtn:hover {
-    background: white;
-    transition: 1s;
-  }
-  
-  .login-form a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 15px;
-    color: black;
-  }
+.login-form {
+  background: whitesmoke;
+  width: 400px;
+  height: 430px;
+  gap: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border-radius: 5px;
+  padding: 10px;
+  -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+}
 
+.login-form h1 {
+  text-align: center;
+}
+
+.login-form span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 360px;
+}
+
+.login-form .loginBtn {
+  background-color: rgb(59, 59, 243);
+  padding: 5px;
+  margin: 10px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 140px;
+  margin-right: 140px;
+}
+
+.login-form .loginBtn:hover {
+  background: white;
+  transition: 1s;
+}
+
+.login-form a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 15px;
+  color: black;
+}
+
+/* register form */
+.register-form {
+  background: whitesmoke;
+  width: 400px;
+  height: 550px;
+  gap: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border-radius: 5px;
+  padding: 10px;
+  -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+}
+
+.register-form h1 {
+  text-align: center;
+}
+
+.register-form span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-form input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 360px;
+}
+
+.register-form .register-btn {
+  background-color: rgb(59, 59, 243);
+  border-radius: 6px;
+  margin-top: 20px;
+  border: none;
+  font-weight: 500px;
+  font-size: 20px;
+  width: 100%;
+}
+
+.register-form .loginBtn:hover {
+  background: white;
+  transition: 1s;
+}
+
+.register-form a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 15px;
+  color: black;
+}
+
+/* end register form */
 
 /* Productpage */
-  .row {
-    width: 800px;
-    height: 410px;
-    background-color: whitesmoke;
-    margin-top: 50px;
-  }
+.row {
+  width: 800px;
+  height: 410px;
+  background-color: whitesmoke;
+  margin-top: 50px;
+}
 
-  .cart-card {
-    width: 300px;
-    height: 20rem;
-    margin-left: 100px;
-    background: white;
-  }
+.cart-card {
+  width: 300px;
+  height: 20rem;
+  margin-left: 100px;
+  background: white;
+}
 
-  .cart-card:hover {
-    border: solid 1px blue;
-    transition: 1s;
-  }
+.cart-card:hover {
+  border: solid 1px blue;
+  transition: 1s;
+}
 
-  .cart-card img {
-    width: 100%;
-    height: 18rem;
-    object-fit: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+.cart-card img {
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  /* cartbag made by card */
-  .cart-card {
-    width: 100%;
-    height: 380px;
-    -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
-    box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
-  }
-  
-  .shopping {
-    font-weight: 500;
-  }
-  
-  .btn {
-    font-weight: 500;
-  }
-  
-  .cart-logo {
-    border-radius: 100px;
-    background-color: whitesmoke;
-    border: solid 1px black;
-    height: 150px;
-    width: 150px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
-    box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
-  }
-  
-  .cart-logo img {
-    object-fit: cover;
-    border-radius: 100px;
-    border: solid 2px black;
-  }
+/* cartbag made by card */
+.cart-card {
+  width: 100%;
+  height: 380px;
+  -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+}
+
+.shopping {
+  font-weight: 500;
+}
+
+.btn {
+  font-weight: 500;
+}
+
+.cart-logo {
+  border-radius: 100px;
+  background-color: whitesmoke;
+  border: solid 1px black;
+  height: 150px;
+  width: 150px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+}
+
+.cart-logo img {
+  object-fit: cover;
+  border-radius: 100px;
+  border: solid 2px black;
+}

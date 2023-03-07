@@ -6,7 +6,6 @@ import Home from './pages/Home';
 import Presale from './pages/Presale';
 import Men from './pages/Men';
 import Women from './pages/Women';
-import Myaccount from './pages/Myaccount';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Productview from './pages/Productview';
@@ -31,10 +30,6 @@ const router = createBrowserRouter([
       {
         path: "/women",
         element: <Women />,
-      },
-      {
-        path: "/myaccount",
-        element: <Myaccount />,
       },
       {
         path: "/login",

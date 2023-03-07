@@ -8,9 +8,6 @@ const Navbar = () => {
         <div className="container-fluid">
           <Link to="/" className="navbar-brand text-white" href="#">SBUDA JEANS</Link>
           <button className="navbar-toggler">
-            <span className="navbar-toggler-icon"></span>
-            <span className="navbar-toggler-icon"></span>
-            <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -23,13 +20,11 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link to="/women" className="nav-link text-white active" aria-current="page" href="#">Women</Link>
               </li>
-              <li className="nav-item">
-                <Link to="/login" className="nav-link text-white active" aria-current="page" href="#">Login</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/register" className="nav-link text-white active" aria-current="page" href="#">Register</Link>
-              </li>
             </ul>
+            <form className="d-flex" role="search">
+                <Link to="/login" className="login text-white">Login</Link>
+                <Link to="/register" className="register text-white">Register</Link>
+            </form>
             <Link to='/cartbag' className='checkout'>
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" className="bi bi-bag-check" viewBox="0 0 16 16">
                 <path  fillRule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
@@ -37,9 +32,6 @@ const Navbar = () => {
               </svg>
               <span className='cartCount' style={{ color: "white" }}>0</span>
             </Link>
-            <form className="d-flex" role="search">
-              <Link to="/myaccount" className="btn btn-outline-primary" type="submit">My Account</Link>
-            </form>
           </div>
         </div>
       </nav>
