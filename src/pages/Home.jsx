@@ -4,6 +4,7 @@ import Productsdata from "../Productsdata";
 import { useState } from "react";
 import Footer from "../components/Footer";
 import Frontshowside from "../components/Frontshowside";
+import Showslide from "../components/Showslide";
 
 const Home = () => {
   const [products, setProducts] = useState(Productsdata);
@@ -24,6 +25,9 @@ const Home = () => {
               amount={product.amount}
             />
           ))}
+        </div>
+        <div className="show-slide mt-5">
+          <Showslide imgSrc="//img.ltwebstatic.com/images3_ach/2023/02/14/1676355682f7c7cf31758a326ba59d26a115bb8057_thumbnail_1920x.webp"/>
         </div>
       </div>
       <Footer />
