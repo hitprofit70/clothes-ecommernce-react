@@ -240,11 +240,37 @@ footer .info-social .icon {
 
 
 /* Productpage made by card*/
-.row {
-  width: 800px;
-  height: 410px;
+.product-cart {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.view-cart {
+  width: 600px;
+  height: 400px;
   background-color: whitesmoke;
   margin-top: 50px;
+}
+
+.view-amount-details {
+  width: 400px;
+  height: 300px;
+  background-color: whitesmoke;
+  margin-top: 50px;
+}
+
+.btn-addtocart {
+  background-color: blue;
+  width: 250px;
+  margin-left: 80px;
+  margin-top: 10px;
+}
+
+.btn-checkout {
+  background-color: blue;
+  width: 250px;
+  margin-left: 80px;
+  margin-top: 10px;
 }
 
 .cart-card {
@@ -331,3 +357,4 @@ footer .info-social .icon {
   box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
   width: 800px;
 }
+
