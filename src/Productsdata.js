@@ -27,8 +27,6 @@ const productData = [
       title: "Yellow Denim",
       amount: 354.99,
     },
-  
-  
     {
       id: 5,
       productsImg:
@@ -36,7 +34,6 @@ const productData = [
       title: "Yellow Denim",
       amount: 354.99,
     },
-  
     {
       id: 6,
       productsImg:
@@ -44,7 +41,6 @@ const productData = [
       title: "Yellow Denim",
       amount: 354.99,
     },
-  
     {
       id: 7,
       productsImg:
@@ -52,7 +48,6 @@ const productData = [
       title: "Yellow Denim",
       amount: 354.99,
     },
-  
     {
       id: 8,
       productsImg:
