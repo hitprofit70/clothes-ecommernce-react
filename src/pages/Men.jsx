@@ -11,7 +11,7 @@ const Men = () => {
     <div>
       <Navbar />
       <div className="container mt-5">
-        <Showslide imgSrc="//img.ltwebstatic.com/images3_ach/2023/02/14/1676355682f7c7cf31758a326ba59d26a115bb8057_thumbnail_1920x.webp" />
+        <Showslide imgSrc="//img.ltwebstatic.com/images3_ach/2023/02/27/167749785594a4f66955874d4b4e04fc2a6a4043d2.webp" />
         <h2 className="title text-center mt-5">Men</h2>
         <div className="products-card">
           {productsmen.map((product, index) => (
@@ -23,6 +23,9 @@ const Men = () => {
               amount={product.amount}
             />
           ))}
+        </div>
+        <div className="show-slide mt-5">
+          <Showslide imgSrc="//img.ltwebstatic.com/images3_ach/2023/02/14/1676355682f7c7cf31758a326ba59d26a115bb8057_thumbnail_1920x.webp"/>
         </div>
       </div>
       <Footer />
