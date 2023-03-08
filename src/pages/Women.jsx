@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Frontshowside from '../components/Frontshowside'
 import ProductsCard from '../components/ProductsCard';
 import Footer from '../components/Footer';
-import Womendata from '../pages/Womendata';
+import Womendata from '../APIdata/Womendata';
 
 const Women = () => {
   const [productswomen, setProductswomen] = useState(Womendata);

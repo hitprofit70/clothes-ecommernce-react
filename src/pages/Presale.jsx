@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import ProductsCard from '../components/ProductsCard';
 import Footer from '../components/Footer';
-import Presaledata from '../pages/Presaledata';
+import Presaledata from '../APIdata/Presaledata';
 
 const Presale = () => {
   const [saleproduct, setSaleproduct] = useState(Presaledata);

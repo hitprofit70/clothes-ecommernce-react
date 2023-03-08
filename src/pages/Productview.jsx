@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Productsdata from "../Productsdata";
+import Productsdata from "../APIdata/Productsdata";
 import { useParams } from "react-router-dom";
 
 const Productview = () => {

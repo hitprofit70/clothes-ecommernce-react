@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import ProductsCard from "../components/ProductsCard";
 import Footer from "../components/Footer";
-import Mendata from "../pages/Mendata";
 import Showslide from "../components/Showslide";
+import Mendata from "../APIdata/Mendata"
 
 const Men = () => {
   const [productsmen, setProductsmen] = useState(Mendata);
