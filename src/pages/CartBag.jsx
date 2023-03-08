@@ -10,15 +10,17 @@ const CartBag = () => {
       <div className="container mt-5">
         <h4>Shopping Cart</h4>
         <div className="shopping-card">
-          <div className="shopping-cart">
-            <div className="shopping-img">
+           <div className="shopping-img">
               <img
                 src="https://th.bing.com/th/id/OIP.Axz-vFaD-7hHlbO7r6ZGkQHaIu?pid=ImgDet&rs=1"
-                width="130"
-                height="130"
+                width="100"
+                height="100"
                 alt=""
+                
               />
             </div>
+          <div className="shopping-cart">
+           
             <span className="shopping-text">Your shopping cart is empty</span>
             <br></br>
             <Link to="/">
