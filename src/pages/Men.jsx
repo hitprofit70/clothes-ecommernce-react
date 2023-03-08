@@ -11,7 +11,7 @@ const Men = () => {
     <div>
       <Navbar />
       <div className="container mt-5">
-        <Showslide/>
+        <Showslide imgSrc="//img.ltwebstatic.com/images3_ach/2023/02/14/1676355682f7c7cf31758a326ba59d26a115bb8057_thumbnail_1920x.webp" />
         <h2 className="title text-center mt-5">Men</h2>
         <div className="products-card">
           {productsmen.map((product, index) => (
