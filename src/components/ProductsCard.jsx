@@ -2,8 +2,6 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 const ProductsCard = ({id, productsImg, title, discountPrice, amount}) => {
-
-  console.log(id)
   return (
     <div className='container mt-5'>
       <div className="card">
