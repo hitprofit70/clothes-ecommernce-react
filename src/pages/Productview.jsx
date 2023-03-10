@@ -3,9 +3,13 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Productsdata from "../APIdata/Productsdata";
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import AppContext from "../context/AppContent";
 
 const Productview = () => {
   const [products, setProducts] = useState(null);
+  const {addtoCart} = useContext(AppContext);
+  const {cartData} = useContext(AppContext);
 
   const { id } = useParams();
 
@@ -16,7 +20,7 @@ const Productview = () => {
   }, [id]);
   return (
     <div>
-      <Navbar/>
+      <Navbar cartData={cartData}/>
       <div className="container mt-5">
         <div className="product-cart">
           {products && (
@@ -32,7 +36,7 @@ const Productview = () => {
                 <h5 className="cart-amount">R{products.amount}</h5>
                 <p className="cart-delivery">Free Delivery</p>
                 <h5 className="cart-text">{products.title}</h5>
-                <button className="btn-addtocart">AddtoCart</button>
+                <button className="btn-addtocart" onClick={addtoCart}>AddtoCart</button>
                 <button className="btn-checkout">Checkout</button>
               </div>
             </div>

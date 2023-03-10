@@ -1,13 +1,14 @@
 import Navbar from "../components/Navbar";
 import ProductsCard from "../components/ProductsCard";
-import { useState } from "react";
 import Footer from "../components/Footer";
 import Frontshowside from "../components/Frontshowside";
 import Showslide from "../components/Showslide";
-import Productsdata from "../APIdata/Productsdata"
+import { useContext } from "react";
+import AppContext from "../context/AppContent";
 
 const Home = () => {
-  const [products, setProducts] = useState(Productsdata);
+  const {products} = useContext(AppContext);
+  
   return (
     <div>
       <Navbar />
