@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import ProductsCard from '../components/ProductsCard';
 import Footer from '../components/Footer';
-import Presaledata from '../APIdata/Presaledata';
+import { useContext } from "react";
+import AppContext from "../context/AppContent";
 
 const Presale = () => {
-  const [saleproduct, setSaleproduct] = useState(Presaledata);
+  const {saleproducts} = useContext(AppContext);
+
   return (
     <div>
       <Navbar/>
       <div className='container'>
       <div className='products-card'>
-      {saleproduct.map((product, index) => (
+      {saleproducts.map((product, index) => (
             <ProductsCard
               key={index} 
               id={product.id}

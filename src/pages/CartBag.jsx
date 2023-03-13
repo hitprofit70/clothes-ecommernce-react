@@ -2,8 +2,12 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import AppContext from "../context/AppContent";
+import ProductsCard from "../components/ProductsCard";
 
 const CartBag = () => {
+  const {cartData} = useContext(AppContext);
   return (
     <div>
       <Navbar />
@@ -26,7 +30,14 @@ const CartBag = () => {
             </Link>
           </div>
         </div>
-        <div className="list-cart mt-5">
+        {cartData.map((product, index) => (
+          <ProductsCard key={index}
+          id={product.id}
+          productsImg={product.Img}
+          title={product.title}
+          amount={product.amount} />
+        ))}
+        {/* <div className="list-cart mt-5">
           <div className="img-src mt-5">
             <img
               src="https://img.ltwebstatic.com/images3_pi/2021/08/31/16303411089d4e3013a266790258f64456ffae143a_thumbnail_900x.webp"
@@ -101,7 +112,7 @@ const CartBag = () => {
             R399.98
           </div>
           <button className="btn-checkout">Proceed to Checkout</button>
-        </div>
+        </div> */}
       </div>
       <Footer />
     </div>
