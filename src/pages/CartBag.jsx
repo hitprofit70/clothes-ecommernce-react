@@ -59,7 +59,6 @@ const CartBag = () => {
             Remove
           </div>
         </div>
-
         <div className="list-cart mt-5">
           <div className="img-src mt-5">
             <img
@@ -92,6 +91,16 @@ const CartBag = () => {
             </svg>{" "}
             Remove
           </div>
+        </div>
+
+        <div className="cart-summary mt-5">
+          <div className="cart-summary-title">
+            Cart Summary
+          </div>
+          <div className="cart-summary-amount">
+            R399.98
+          </div>
+          <button className="btn-checkout">Proceed to Checkout</button>
         </div>
       </div>
       <Footer />
