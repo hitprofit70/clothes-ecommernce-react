@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Productsdata from "../APIdata/Productsdata";
+import {Link} from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import AppContext from "../context/AppContent";
@@ -22,26 +23,28 @@ const Productview = () => {
     <div>
       <Navbar cartData={cartData}/>
       <div className="container mt-5">
-        <div className="product-cart">
+        <div className="products-view">
+        <div className="product-view-card">
           {products && (
             <div className="view-cart">
-              <div className="col mt-5">
-                <img src={products.productsImg} alt="" className="cart-card" />
+                <img src={products.Img} alt="" className="cart-card" />
+                <h5 className="product-text">{products.title}</h5>
               </div>
-            </div>
           )}
-          {products && (
-            <div className="view-amount-details">
+          </div>
+            <div className="product-details">
+            {products && (
               <div className="col mt-5">
                 <h5 className="cart-amount">R{products.amount}</h5>
                 <p className="cart-delivery">Free Delivery</p>
-                <h5 className="cart-text">{products.title}</h5>
-                <button className="btn-addtocart" onClick={addtoCart}>AddtoCart</button>
-                <button className="btn-checkout">Checkout</button>
+                <button className="btn-addtocart" onClick={addtoCart}>Add to Cart</button>
+                <Link to='/checkpage'>
+                <button className="btn-checkout">Go to Cart</button>
+                </Link>
               </div>
+              )}
             </div>
-          )}
-        </div>
+          </div>
       </div>
       <Footer />
     </div>

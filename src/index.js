@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Productview from "./pages/Productview";
 import CartBag from "./pages/CartBag";
+import Checkpage from "./pages/Checkpage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppState from "./context/AppState";
 
@@ -48,9 +49,14 @@ const router = createBrowserRouter([
         path: "/cartbag",
         element: <CartBag />,
       },
+      {
+        path: "//checkpage",
+        element: <Checkpage />,
+      },
     ],
   },
 ]);
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

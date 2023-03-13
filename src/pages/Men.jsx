@@ -18,7 +18,7 @@ const Men = () => {
             <ProductsCard
               key={index}
               id={product.id}
-              productsImg={product.productsImg}
+              productsImg={product.Img}
               title={product.title}
               amount={product.amount}
             />

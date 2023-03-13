@@ -9,7 +9,7 @@ const AppState = ({children}) => {
 
     function addtoCart() {
      setCartdata([...cartData, products])
-     console.log(cartData)
+     setProducts(products)
     }
 
   return (
