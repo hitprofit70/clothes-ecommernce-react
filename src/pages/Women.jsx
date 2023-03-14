@@ -1,12 +1,13 @@
-import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Frontshowside from "../components/Frontshowside";
 import ProductsCard from "../components/ProductsCard";
 import Footer from "../components/Footer";
-import Womendata from "../APIdata/Womendata";
+import { useContext } from "react";
+import AppContext from "../context/AppContent";
 
 const Women = () => {
-  const [productswomen, setProductswomen] = useState(Womendata);
+  const {productswomen} = useContext(AppContext);
+
   return (
     <div>
       <Navbar />

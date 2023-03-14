@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Productsdata from "../APIdata/Productsdata";
-import Presaledata from "../APIdata/Presaledata"
-import {Link} from "react-router-dom";
+import Presaledata from "../APIdata/Presaledata";
+import Mendata from "../APIdata/Mendata";
+import Womendata from "../APIdata/Womendata";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import AppContext from "../context/AppContent";
@@ -11,8 +13,10 @@ import AppContext from "../context/AppContent";
 const Productview = () => {
   const [products, setProducts] = useState(null);
   const [saleproducts, setSaleproducts] = useState(null);
-  const {addtoCart} = useContext(AppContext);
-  const {cartData} = useContext(AppContext);
+  const [productsmen, setProductsmen] = useState(null);
+  const [productswomen, setProductswomen] = useState(null); 
+  const { addtoCart } = useContext(AppContext);
+  const { cartData } = useContext(AppContext);
 
   const { id } = useParams();
 
@@ -28,39 +32,114 @@ const Productview = () => {
     });
   }, [id]);
 
+  useEffect(() => {
+    setProductsmen(() => {
+      return Mendata.find((p) => p.id === Number(id));
+    });
+  }, [id]);
+
+  useEffect(() => {
+    setProductswomen(() => {
+      return Womendata.find((p) => p.id === Number(id));
+    });
+  }, [id]);
+
+
   return (
     <div>
-      <Navbar cartData={cartData}/>
+      <Navbar cartData={cartData} />
       <div className="container mt-5">
         <div className="products-view">
-        <div className="product-view-card">
-          {products && (
-            <div className="view-cart">
+          <div className="product-view-card">
+            {products && (
+              <div className="view-cart">
                 <img src={products.Img} alt="" className="cart-card" />
                 <h5 className="product-text">{products.title}</h5>
               </div>
-          )}
-               {saleproducts && (
-            <div className="view-cart">
+            )}
+            {saleproducts && (
+              <div className="view-cart">
                 <img src={saleproducts.Img} alt="" className="cart-card" />
                 <h5 className="product-text">{saleproducts.title}</h5>
               </div>
-          )}
+            )}
+            {productsmen && (
+              <div className="view-cart">
+                <img src={productsmen.Img} alt="" className="cart-card" />
+                <h5 className="product-text">{productsmen.title}</h5>
+              </div>
+            )}
+            {productswomen && (
+              <div className="view-cart">
+                <img src={productswomen.Img} alt="" className="cart-card" />
+                <h5 className="product-text">{productswomen.title}</h5>
+              </div>
+            )}
           </div>
 
-            <div className="product-details">
+          <div className="product-details">
             {products && (
               <div className="col mt-5">
                 <h5 className="cart-amount">R{products.amount}</h5>
                 <p className="cart-delivery">Free Delivery</p>
-                <button className="btn-addtocart" onClick={addtoCart}>Add to Cart</button>
-                <Link to='/checkpage'>
-                <button className="btn-checkout">Go to Cart</button>
+                <button
+                  className="btn-addtocart"
+                  onClick={() => addtoCart(products)}
+                >
+                  Add to Cart
+                </button>
+                <Link to="/checkpage">
+                  <button className="btn-checkout">Go to Cart</button>
                 </Link>
-              </div>
-              )}
-            </div>
+              </div> 
+            )}
+           {saleproducts && (
+              <div className="col mt-5">
+                <h5 className="cart-amount">R{saleproducts.amount}</h5>
+                <p className="cart-delivery">Free Delivery</p>
+                <button
+                  className="btn-addtocart"
+                  onClick={() => addtoCart(saleproducts)}
+                >
+                  Add to Cart
+                </button>
+                <Link to="/checkpage">
+                  <button className="btn-checkout">Go to Cart</button>
+                </Link>
+              </div> 
+            )}
+            {productsmen && (
+              <div className="col mt-5">
+                <h5 className="cart-amount">R{productsmen.amount}</h5>
+                <p className="cart-delivery">Free Delivery</p>
+                <button
+                  className="btn-addtocart"
+                  onClick={() => addtoCart(productsmen)}
+                >
+                  Add to Cart
+                </button>
+                <Link to="/checkpage">
+                  <button className="btn-checkout">Go to Cart</button>
+                </Link>
+              </div> 
+            )}
+            {productswomen && (
+              <div className="col mt-5">
+                <h5 className="cart-amount">R{productswomen.amount}</h5>
+                <p className="cart-delivery">Free Delivery</p>
+                <button
+                  className="btn-addtocart"
+                  onClick={() => addtoCart(productswomen)}
+                >
+                  Add to Cart
+                </button>
+                <Link to="/checkpage">
+                  <button className="btn-checkout">Go to Cart</button>
+                </Link>
+              </div> 
+            )}
           </div>
+        </div>
       </div>
       <Footer />
     </div>
