@@ -10,7 +10,8 @@ const Presale = () => {
   return (
     <div>
       <Navbar/>
-      <div className='container'>
+      <div className='container mt-5'>
+      <h2 className="title text-center mt-5">Sale</h2>
       <div className='products-card'>
       {saleproducts.map((product, index) => (
             <ProductsCard

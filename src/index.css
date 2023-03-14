@@ -434,3 +434,25 @@ margin-top: 10px;
   color: white;
 }
 
+.view-home {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin: 10px;
+}
+
+.view-product .card {
+  border-radius: 100px;
+  width: 150px;
+  height: 10rem;
+  background-color: red;
+  -webkit-box-shadow: -1px 6px 10px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 6px 10px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 6px 10px -3px rgba(0, 0, 0, 0.75);
+}
+
+.view-product .card img{
+  border-radius: 100px;
+  width: 150px;
+  height: 10rem;
+}
+
