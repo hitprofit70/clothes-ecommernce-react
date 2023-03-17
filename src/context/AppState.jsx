@@ -11,6 +11,7 @@ const AppState = ({children}) => {
     const [saleproducts, setSaleproducts] = useState(Presaledata);
     const [productsmen, setProductsmen] = useState(Mendata);
     const [productswomen, setProductswomen] = useState(Womendata);
+    const [qtyCount, setQtyCount] = useState(0);
 
     const [cartData, setCartdata] = useState([]);
 
@@ -18,8 +19,22 @@ const AppState = ({children}) => {
      setCartdata([...cartData, products]);
     }
 
+    function qtyUp() {
+       setQtyCount(qtyCount + 1);
+    }
+
+    function qtyDown() {
+      setQtyCount(qtyCount - 1);
+   }
+
+    function remove(products) {
+      setCartdata.splice(products,1);
+
+      console.log(cartData);
+    }
+
   return (
-    <AppContext.Provider value={{products, saleproducts, productsmen, productswomen, cartData, addtoCart}}>
+    <AppContext.Provider value={{products, saleproducts, productsmen, productswomen, cartData, addtoCart, qtyCount, qtyUp, qtyDown, remove}}>
         {children}
     </AppContext.Provider>
   )

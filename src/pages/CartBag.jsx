@@ -36,7 +36,7 @@ const CartBag = () => {
           <Listdetails key={index}
           productsImg={product.Img}
           title={product.title}
-          amount={product.amount} />
+          amount={product.amount}/>
         ))}
       </div>
       <Footer />

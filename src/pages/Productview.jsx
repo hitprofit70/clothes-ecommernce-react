@@ -133,9 +133,6 @@ const Productview = () => {
                 >
                   Add to Cart
                 </button>
-                <Link to="/checkpage">
-                  <button className="btn-checkout">Go to Cart</button>
-                </Link>
               </div> 
             )}
           </div>

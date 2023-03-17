@@ -13,14 +13,14 @@ const Frontshowside = (props) => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={props.imgSrc1}
+            src={props.slidesrcOne}
             alt="First slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={props.imgSrc2}
+            src={props.slidesrcTwo}
             alt="Second slide"
           />
         </Carousel.Item>
