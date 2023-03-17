@@ -364,11 +364,26 @@ margin-top: 20px;
 .cart-summary {
   height: 200px;
   width: 350px;
+  margin-top: 50px;
   -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
-  margin-top: -500px;
-  margin-left: 900px;
+}
+
+.cart-summary .header span {
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.cart-summary .cart-total span {
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.cart-summary .cart-remove button {
+  margin-left: 15px;
+  font-weight: 500;
+  border-radius: 5px;
 }
 /* end cartbag page */
 

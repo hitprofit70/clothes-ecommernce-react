@@ -38,6 +38,14 @@ const CartBag = () => {
           title={product.title}
           amount={product.amount}/>
         ))}
+        {/* {cartData.length === 0 && (
+            <div className="cart">
+              {" "} Your shopping cart is empty{" "}
+            </div>)}
+            {cartData.map((c, index)  =>  (<Listdetails key={index}
+            product={c}
+            />
+            ))} */}
       </div>
       <Footer />
     </div>
