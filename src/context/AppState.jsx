@@ -14,30 +14,29 @@ const AppState = ({children}) => {
     const [qtyCount, setQtyCount] = useState(0);
     const [cartData, setCartdata] = useState([]);
     const [total, setTotal] = useState(0);
+    const [amount, setAmount] = useState(0);
 
 
     function addtoCart(products) {
      setCartdata([...cartData, products]);
     }
 
-    function qtyUp() {
+    function qtyUp(products) {
        setQtyCount(qtyCount + 1);
     }
 
-    function qtyDown() {
+    function qtyDown(products ) {
       setQtyCount(qtyCount - 1);
    }
 
     function remove() {
-      cartData.splice(1);
+      setCartdata([cartData.splice(1)])
 
       console.log(cartData);
     }
 
     function calcuateTotal() {
-      for (let i = 0; i < cartData.length; i++) {
-        setTotal(total + cartData) 
-      }
+     setTotal(total += amount)
     }
 
   return (
