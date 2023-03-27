@@ -12,7 +12,6 @@ const AppState = ({ children }) => {
   const [productswomen, setProductswomen] = useState(Womendata);
   const [qtyCount, setQtyCount] = useState(0);
   const [cartData, setCartdata] = useState([]);
-  const [total, setTotal] = useState(0);
 
 
   const addtoCart = (products) => {
@@ -32,15 +31,7 @@ const AppState = ({ children }) => {
     let products = cartData.filter((x) => x.id !== product.id);
     setCartdata(products);
   };
- 
-  const calcuateTotal = () => {
-    let total = 0;
 
-  for (let i = 0; i < cartData.length; i++) {
-    total += cartData[i].amount;
-  }
-    setTotal(total)
-  };
 
   return (
     <AppContext.Provider
@@ -50,9 +41,7 @@ const AppState = ({ children }) => {
         productsmen,
         productswomen,
         cartData,
-        total,
         addtoCart,
-        calcuateTotal,
         qtyCount,
         qtyUp,
         qtyDown,
