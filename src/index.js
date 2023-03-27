@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         element: <CartBag />,
       },
       {
-        path: "//checkpage",
+        path: "/checkpage",
         element: <Checkpage />,
       },
     ],
