@@ -1,12 +1,17 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Deliverymethod from '../components/Deliverymethod';
 
 const Checkpage = () => {
   return (
     <div>
         <Navbar/>
-        <h5>Checkpage</h5>
+        <div className='container mt-5'>
+          <div className='deliver-method'>
+          <Deliverymethod/>
+          </div>
+        </div>
         <Footer/>
     </div>
   )

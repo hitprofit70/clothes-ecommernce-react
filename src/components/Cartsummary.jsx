@@ -13,7 +13,7 @@ const Cartsummary = () => {
           <span className="col">R656</span>
         </div>
         <div className="cart-remove mt-3">
-          <Link to="/login">
+          <Link to="/checkpage">
           <button>Proceed to Checkout</button>
           </Link>
         </div>

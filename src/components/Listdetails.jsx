@@ -6,9 +6,21 @@ const Listdetails = ({ productsImg, title, amount, product }) => {
   const { qtyDown } = useContext(AppContext);
   const { qtyCount } = useContext(AppContext);
   const { removeItem } = useContext(AppContext);
+  const {cartData} = useContext(AppContext)
   
   const { Listdetails } = useContext(AppContext);
   const [count, setCount] = useState(Listdetails);
+  const [totalCost, setTotalcost] = useState(0);
+
+  const calculateTotal = () => {
+    let totalCost = 0;
+     
+    for (let index = 0; index < cartData.length; index++) {
+      totalCost =+ amount;
+      
+    }
+    setTotalcost(totalCost)
+  }
 
   const remove = () =>{
     if(count > 1){
@@ -34,6 +46,7 @@ const Listdetails = ({ productsImg, title, amount, product }) => {
             <div class="col">{title}</div>
             <div class="col">R{amount}</div>
             <div class="col">{qtyCount}</div>
+            <div class="col">{totalCost}</div>
           </div>
         </div>
 
