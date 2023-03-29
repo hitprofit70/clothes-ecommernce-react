@@ -46,7 +46,7 @@ const Productview = () => {
 
 
   return (
-    <div>
+    <>
       <Navbar cartData={cartData} />
       <div className="container mt-5">
         <div className="products-view">
@@ -130,7 +130,7 @@ const Productview = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

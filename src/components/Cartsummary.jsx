@@ -10,7 +10,7 @@ const Cartsummary = () => {
         </div>
         <div className="row cart-total mt-3">
           <span className="col">Total</span>
-          <span className="col">R656</span>
+          <span className="col">R400</span>
         </div>
         <div className="cart-remove mt-3">
           <Link to="/checkpage">

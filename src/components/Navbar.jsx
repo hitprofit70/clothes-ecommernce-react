@@ -9,7 +9,7 @@ const Navbar = () => {
     <div>
        <nav className="navbar navbar-expand-lg bg-dark">
         <div className="container-fluid">
-          <Link to="/" className="navbar-brand text-white" href="#">SHOPPING</Link>
+          <Link to="/" className="navbar-brand text-white">SHOPPING</Link>
           <button className="navbar-toggler">
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -18,10 +18,10 @@ const Navbar = () => {
                 <Link to="/presale" className="nav-link text-white active" aria-current="page" href="#">Presale</Link>
               </li>
               <li className="nav-item">
-                <Link to="/men" className="nav-link text-white active" aria-current="page" href="#">Men</Link>
+                <Link to="/men" className="nav-link text-white active" aria-current="page">Men</Link>
               </li>
               <li className="nav-item">
-                <Link to="/women" className="nav-link text-white active" aria-current="page" href="#">Women</Link>
+                <Link to="/women" className="nav-link text-white active" aria-current="page">Women</Link>
               </li>
             </ul>
             <form className="d-flex" role="search">

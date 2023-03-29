@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 const Login = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <div className="container mt-5">
         <form className="login-form">
@@ -40,7 +40,7 @@ const Login = () => {
         </form>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

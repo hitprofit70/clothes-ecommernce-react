@@ -11,7 +11,7 @@ const Home = () => {
   const { products } = useContext(AppContext);
 
   return (
-    <div>
+    <>
       <Navbar />
       <div className="container mt-5">
         <Frontshowside slidesrcOne="//img.ltwebstatic.com/images3_ach/2023/02/28/1677554601b881bccf6b60db37976272793719b057_thumbnail_1920x.webp" slidesrcTwo="//img.ltwebstatic.com/images3_ach/2023/03/13/1678675548cbe1d513f61ad57736025fbb9054582c.gif"/>
@@ -37,7 +37,7 @@ const Home = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

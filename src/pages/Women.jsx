@@ -9,7 +9,7 @@ const Women = () => {
   const {productswomen} = useContext(AppContext);
 
   return (
-    <div>
+    <>
       <Navbar />
       <div className="container mt-5">
         <Frontshowside
@@ -30,7 +30,7 @@ const Women = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

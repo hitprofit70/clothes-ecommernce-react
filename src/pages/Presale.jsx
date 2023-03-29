@@ -8,7 +8,7 @@ const Presale = () => {
   const {saleproducts} = useContext(AppContext);
 
   return (
-    <div>
+    <>
       <Navbar/>
       <div className='container mt-5'>
       <h2 className="title text-center mt-5">Sale</h2>
@@ -25,7 +25,7 @@ const Presale = () => {
       </div>
       </div>
       <Footer/>
-    </div>
+    </>
   )
 }
 

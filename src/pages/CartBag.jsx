@@ -11,7 +11,7 @@ const CartBag = () => {
   const { cartData } = useContext(AppContext);
 
   return (
-    <div>
+    <>
       <Navbar />
       <div className="container mt-5">
         <h4>Shopping Cart</h4>
@@ -46,7 +46,7 @@ const CartBag = () => {
       </div>
         <Cartsummary/>
       <Footer />
-    </div>
+    </>
   );
 };
 

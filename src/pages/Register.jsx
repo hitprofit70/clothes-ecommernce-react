@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 
 const Register = () => {
   return (
-    <div>
+    <>
         <Navbar/>
         <div className='container mt-5'>
         <form className="register-form">
@@ -34,7 +34,7 @@ const Register = () => {
         </form> 
         </div>
         <Footer/>
-    </div>
+    </>
   )
 }
 
