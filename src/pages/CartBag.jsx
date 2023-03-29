@@ -43,6 +43,11 @@ const CartBag = () => {
             product={product}
           />
         ))}
+        <div className="back-to-home mt-5">
+          <Link to="/">
+          <button className="btn-primary">Back</button>
+          </Link>
+        </div>
       </div>
         <Cartsummary/>
       <Footer />

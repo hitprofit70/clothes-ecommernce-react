@@ -10,7 +10,7 @@ const Showslide = (props) => {
   };
 
   return (
-    <div>
+    <div className="banner">
       <Link to="/men">
         <Carousel activeIndex={index} onSelect={handleSelect}>
           <Carousel.Item>

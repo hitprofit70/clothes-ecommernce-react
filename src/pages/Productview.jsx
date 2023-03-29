@@ -5,7 +5,6 @@ import Productsdata from "../APIdata/Productsdata";
 import Presaledata from "../APIdata/Presaledata";
 import Mendata from "../APIdata/Mendata";
 import Womendata from "../APIdata/Womendata";
-import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import AppContext from "../context/AppContent";

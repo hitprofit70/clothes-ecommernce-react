@@ -8,7 +8,7 @@ const Frontshowside = (props) => {
     setIndex(selectedIndex);
   };
   return (
-    <div>
+    <div className="banner">
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
           <img

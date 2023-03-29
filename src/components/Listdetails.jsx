@@ -34,7 +34,6 @@ const Listdetails = ({ productsImg, title, amount, product,}) => {
           <div className="row mt-4">
             <div className="col">{title}</div>
             <div className="col">R{amount}</div>
-            <div className="col">R{totalCost}</div>
           </div>
         </div>
         <div className="btn-remove mt-5">
