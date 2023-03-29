@@ -2,9 +2,6 @@ import React, { useContext, useState } from "react";
 import AppContext from "../context/AppContent";
 
 const Listdetails = ({ productsImg, title, amount, product }) => {
-  const { qtyUp } = useContext(AppContext);
-  const { qtyDown } = useContext(AppContext);
-  const { qtyCount } = useContext(AppContext);
   const { removeItem } = useContext(AppContext);
   const {cartData} = useContext(AppContext)
   
@@ -40,23 +37,12 @@ const Listdetails = ({ productsImg, title, amount, product }) => {
           <div class="row">
             <div class="col">Item</div>
             <div class="col">Price</div>
-            <div class="col">Qty</div>
           </div>
           <div class="row mt-4">
             <div class="col">{title}</div>
             <div class="col">R{amount}</div>
-            <div class="col">{qtyCount}</div>
             <div class="col">{totalCost}</div>
           </div>
-        </div>
-
-        <div className="qty">
-          <span className="qtyDown" onClick={qtyDown}>
-            -
-          </span>
-          <span className="qtyUp" onClick={qtyUp}>
-            +
-          </span>
         </div>
         <div className="btn-remove mt-5">
           <svg

@@ -10,21 +10,11 @@ const AppState = ({ children }) => {
   const [saleproducts, setSaleproducts] = useState(Presaledata);
   const [productsmen, setProductsmen] = useState(Mendata);
   const [productswomen, setProductswomen] = useState(Womendata);
-  const [qtyCount, setQtyCount] = useState(0);
   const [cartData, setCartdata] = useState([]);
 
 
   const addtoCart = (products) => {
     setCartdata([...cartData, products]);
-  }
-
-  const qtyUp = () => {
-    setQtyCount(qtyCount + 1);
-  }
-
-  const qtyDown = () => {
-    if(qtyCount > 1)
-    setQtyCount(qtyCount - 1);
   }
 
   const removeItem = (product) => {
@@ -42,9 +32,6 @@ const AppState = ({ children }) => {
         productswomen,
         cartData,
         addtoCart,
-        qtyCount,
-        qtyUp,
-        qtyDown,
         removeItem,
       }}
     >
