@@ -12,7 +12,7 @@ const Presale = () => {
       <Navbar/>
       <div className='container mt-5'>
       <h2 className="title text-center mt-5">Sale</h2>
-      <div className='products-card'>
+      <div className='row row-cols-4'>
       {saleproducts.map((product, index) => (
             <ProductsCard
               key={index} 

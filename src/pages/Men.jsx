@@ -11,9 +11,11 @@ const Men = () => {
     <>
       <Navbar />
       <div className="container mt-5">
+        <div className="showslide">
         <Showslide imgSrc="//img.ltwebstatic.com/images3_ach/2023/02/27/167749785594a4f66955874d4b4e04fc2a6a4043d2.webp" />
+        </div>
         <h2 className="title text-center mt-5">Men</h2>
-        <div className="products-card">
+        <div className="row row-cols-4">
           {productsmen.map((product, index) => (
             <ProductsCard
               key={index}

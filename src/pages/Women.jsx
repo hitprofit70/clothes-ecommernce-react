@@ -17,7 +17,7 @@ const Women = () => {
           slidesrcTwo="//img.ltwebstatic.com/images3_ach/2023/02/28/16775545274c7aa93fb798af6e3ff671b59466b5d9.gif"
         />
         <h2 className="title text-center mt-5">Women</h2>
-        <div className="products-card">
+        <div className="row row-cols-4">
           {productswomen.map((product, index) => (
             <ProductsCard
               key={index}

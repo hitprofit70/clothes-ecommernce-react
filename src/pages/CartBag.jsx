@@ -34,6 +34,7 @@ const CartBag = () => {
             </div>
           </div>
         )}
+        <div className="order-placed">
         {cartData.map((product, index) => (
           <Listdetails
             key={index}
@@ -48,8 +49,9 @@ const CartBag = () => {
           <button className="btn-primary">Back</button>
           </Link>
         </div>
-      </div>
         <Cartsummary/>
+        </div>
+      </div>
       <Footer />
     </>
   );

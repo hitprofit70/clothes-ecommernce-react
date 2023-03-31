@@ -5,14 +5,14 @@ const Cartsummary = () => {
   return (
     <div className='container'>
          <div className="cart-summary mt-5">
-        <div className="header">
+        <div className="header text-center">
           <span>Cart Summary</span>
         </div>
         <div className="row cart-total mt-3">
           <span className="col">Total</span>
           <span className="col">R400</span>
         </div>
-        <div className="cart-remove mt-3">
+        <div className="cart-checkout mt-3">
           <Link to="/checkpage">
           <button>Proceed to Checkout</button>
           </Link>

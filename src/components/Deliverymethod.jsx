@@ -2,11 +2,11 @@ import React from "react";
 
 const Deliverymethod = () => {
   return (
-    <div class="container">
+    <div className="container">
       <h4 className="header text-center">Payment Method </h4>
       <div className="payment-display mt-3">
         <div className="payment-card">
-          <div class="row mt-5">
+          <div className="row mt-5">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT0zBM_8tPns_dXVEad4OmeLk6VRhbWa_4GIBPx27dClMcVyIvRofSSjMebgDDe5j4Y4o&usqp=CAU"
               alt=""
