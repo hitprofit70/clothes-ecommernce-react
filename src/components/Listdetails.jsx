@@ -1,24 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext} from "react";
 import AppContext from "../context/AppContent";
 
 const Listdetails = ({ productsImg, title, amount, product,}) => {
   const { removeItem } = useContext(AppContext);
-  const {cartData} = useContext(AppContext)
-  const [totalCost, setTotalcost] = useState(0);
-
-  // useEffect(({}))
-
-  const calculateTotal = () => {
-    let totalCost = 0;
-     
-    for (let index = 0; index < cartData.length; index++) {
-      totalCost =+ amount;
-      
-    }
-    setTotalcost(totalCost)
-
-    console.log(totalCost)
-  }
 
   return (
     <div>

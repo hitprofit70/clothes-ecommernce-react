@@ -1,10 +1,19 @@
-import React from "react";
+import React,{ useState} from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import {Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const LogintoSend = () => {
+    toast("All the inputs are required");
+    setEmail(email);
+    setPassword(password);
+  };
 
   return (
     <>
@@ -28,14 +37,31 @@ const Login = () => {
               />
             </svg>
           </span>
-          <input type="text" placeholder="Username or email" />
-          <input type="text" placeholder="Password" />
-          <button className="loginBtn">Login In</button>
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Username or email"
+          />
+          <input
+            type="text"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+          />
+          <button className="loginBtn" onClick={LogintoSend}>
+            Login In
+          </button>
           <span className="forget-password">Forget password?</span>
-          <Link to='/register' className="create-account">
+          <Link to="/register" className="create-account">
             Don't have an account? Create account
           </Link>
         </form>
+        <div className="display-3 mt-5">Your details</div>
+        <div className="row">
+          <h4>{email}</h4>
+          <h4>{password}</h4>
+        </div>
       </div>
       <Footer />
     </>

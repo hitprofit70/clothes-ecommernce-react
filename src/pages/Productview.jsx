@@ -10,13 +10,13 @@ import { useContext } from "react";
 import AppContext from "../context/AppContent";
 
 const Productview = () => {
+  
   const [products, setProducts] = useState(null);
   const [saleproducts, setSaleproducts] = useState(null);
   const [productsmen, setProductsmen] = useState(null);
   const [productswomen, setProductswomen] = useState(null); 
   const { addtoCart } = useContext(AppContext);
   const { cartData } = useContext(AppContext);
-
   const { id } = useParams();
 
   useEffect(() => {
@@ -42,7 +42,6 @@ const Productview = () => {
       return Womendata.find((p) => p.id === Number(id));
     });
   }, [id]);
-
 
   return (
     <>
@@ -75,7 +74,6 @@ const Productview = () => {
               </div>
             )}
           </div>
-
           <div className="product-details">
             {products && (
               <div className="col mt-5">
