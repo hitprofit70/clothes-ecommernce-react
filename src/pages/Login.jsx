@@ -1,9 +1,9 @@
-import React,{ useState, useRef} from "react";
+import React, { useState, useRef } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
@@ -14,15 +14,20 @@ const Login = () => {
   const sendForm = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_eu0h2qp', 'template_sv49alw', loginForm.current, 'bG3aZ20mZmPzd2AeI')
-    setEmail(email, password)
-    console.log(email, password)
-      // .then((result) => {
-      //   console.log(result.test);
-      // }, (error) => {
-      //     console.log(error.text);
-      // });
-    toast("Your email was sent successfully");
+    emailjs.sendForm(
+      "service_eu0h2qp",
+      "template_sv49alw",
+      loginForm.current,
+      "bG3aZ20mZmPzd2AeI"
+    );
+    setEmail(email, password);
+    console.log(email, password);
+
+    if (email & password) {
+      toast("All the fields are required");
+    } else {
+      toast("Your email was sent successfully");
+    }
   };
 
   return (
@@ -47,24 +52,26 @@ const Login = () => {
               />
             </svg>
           </span>
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Username or email"
-          />
-          <input
-            type="text"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-          />
+          <div className="form-input">
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Username or email"
+            /><br></br><br></br>
+            <input
+              type="text"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+            />
+          </div>
           <button className="loginBtn" onClick={sendForm}>
             Login In
           </button>
           <span className="forget-password">Forget password?</span>
           <Link to="/register" className="create-account">
-            Don't have an account? Create account
+            Don't have an account? Register here.
           </Link>
         </form>
 

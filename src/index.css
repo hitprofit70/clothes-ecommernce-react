@@ -75,7 +75,7 @@
   width: 300px;
   height: 20rem;
   margin-left: 100px;
-  background: white;
+  background-image: linear-gradient( white, grey);
 }
 
 .cart-card:hover {
@@ -100,6 +100,7 @@
   padding-top: 30px;
   width: 100%;
   height: 340px;
+  background-image: linear-gradient( white, grey);
   -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
@@ -154,6 +155,7 @@
 .list-cart {
   height: 220px;
   width: 500px;
+  background-image: linear-gradient( white, grey);
   -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
@@ -185,6 +187,7 @@ margin-top: 20px;
   width: 350px;
   margin-top: 550px;
   margin-left: auto;
+  background-image: linear-gradient( white, grey);
   -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
@@ -301,38 +304,76 @@ footer .row {
 }
 /* end */
 
-/* login */
+/* login and register */
 .login-form {
-  background: whitesmoke;
+  display: flex;
+  flex-direction: column;
   width: 400px;
-  height: 430px;
-  gap: 3rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  border-radius: 5px;
-  padding: 10px;
+  height: 400px;
+  background-image: linear-gradient( white, grey);
   -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
 }
 
-.login-form h1 {
+.register-form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 450px;
+  background-image: linear-gradient( white, grey);
+  -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.login-form, .register-form h1 {
   text-align: center;
+}
+
+.brief-header:hover {
+  color: green;
 }
 
 .login-form span {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-.login-form input {
-  padding: 10px;
-  margin: 10px;
+.create-account {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  color: black;
+}
+
+.create-account:hover {
+  color: green;
+  text-decoration: none;
+}
+
+.login-form span:hover {
+  color: green;
+}
+
+input {
   border-radius: 10px;
   border: none;
-  width: 360px;
+  width: 23rem;
+  height: 2.1rem;
+}
+
+.form-input input {
+  margin-left: auto;
 }
 
 .login-form .loginBtn {
@@ -347,79 +388,29 @@ footer .row {
   margin-right: 140px;
 }
 
-.login-form .loginBtn:hover {
-  background: white;
-  transition: 1s;
-}
-
-.login-form a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 15px;
-  color: black;
-}
-
-
-/* register form */
-.register-form {
-  background: whitesmoke;
-  width: 400px;
-  height: 550px;
-  gap: 3rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  border-radius: 5px;
-  padding: 10px;
-  -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
-  box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
-}
-
-.register-form h1 {
-  text-align: center;
-}
-
-.register-form span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.register-form input {
-  padding: 10px;
-  margin: 10px;
-  border-radius: 10px;
-  border: none;
-  width: 360px;
-}
-
-.register-form .register-btn {
+.register-form .registerBtn {
+  height: 2.3rem;
+  width: 23rem;
   background-color: rgb(59, 59, 243);
   border-radius: 6px;
   margin-top: 20px;
   border: none;
   font-weight: 500px;
   font-size: 20px;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.register-form .loginBtn:hover {
+.login-form .loginBtn:hover {
   background: white;
   transition: 1s;
 }
 
-.register-form a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 15px;
-  color: black;
-}
-/* end register form */
+.register-form .registerBtn:hover {
+  background: white;
+  transition: 1s;
+} 
+/* end */
 
 
 /* payment method */
@@ -433,7 +424,7 @@ footer .row {
   height: 33rem;
   border-radius: 10px;
   margin-left: auto;
-  background-color: rgba(0, 0, 0, 0.192);
+  background-image: linear-gradient( white, grey);
   -webkit-box-shadow: -1px 6px 10px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 6px 10px -3px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 6px 10px -3px rgba(0, 0, 0, 0.75);
