@@ -1,25 +1,35 @@
-import React,{ useState} from "react";
+import React,{ useState, useRef} from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import emailjs from '@emailjs/browser';
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const loginForm = useRef();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const LogintoSend = () => {
-    toast("All the inputs are required");
-    setEmail(email);
-    setPassword(password);
+  const sendForm = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_eu0h2qp', 'template_sv49alw', loginForm.current, 'bG3aZ20mZmPzd2AeI')
+    setEmail(email, password)
+    console.log(email, password)
+      // .then((result) => {
+      //   console.log(result.test);
+      // }, (error) => {
+      //     console.log(error.text);
+      // });
+    toast("Your email was sent successfully");
   };
 
   return (
     <>
       <Navbar />
       <div className="container mt-5">
-        <form className="login-form">
+        <form ref={loginForm} className="login-form">
           <h1>Login</h1>
           <span>
             <svg
@@ -49,7 +59,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
           />
-          <button className="loginBtn" onClick={LogintoSend}>
+          <button className="loginBtn" onClick={sendForm}>
             Login In
           </button>
           <span className="forget-password">Forget password?</span>
@@ -57,6 +67,7 @@ const Login = () => {
             Don't have an account? Create account
           </Link>
         </form>
+
         <div className="display-3 mt-5">Your details</div>
         <div className="row">
           <h4>{email}</h4>
