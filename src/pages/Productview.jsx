@@ -52,33 +52,30 @@ const Productview = () => {
             {products && (
               <div className="view-cart">
                 <img src={products.Img} alt="" className="cart-card" />
-                <h5 className="product-text">{products.title}</h5>
               </div>
             )}
             {saleproducts && (
               <div className="view-cart">
                 <img src={saleproducts.Img} alt="" className="cart-card" />
-                <h5 className="product-text">{saleproducts.title}</h5>
               </div>
             )}
             {productsmen && (
               <div className="view-cart">
                 <img src={productsmen.Img} alt="" className="cart-card" />
-                <h5 className="product-text">{productsmen.title}</h5>
               </div>
             )}
             {productswomen && (
               <div className="view-cart">
                 <img src={productswomen.Img} alt="" className="cart-card" />
-                <h5 className="product-text">{productswomen.title}</h5>
               </div>
             )}
           </div>
-          <div className="product-details">
+          <div className="product-view-card">
             {products && (
               <div className="col mt-5">
-                <h5 className="cart-amount">R{products.amount}</h5>
-                <p className="cart-delivery">Free Delivery</p>
+                <h5 className="cart-name">{products.title}</h5>
+                <span className="cart-amount">R{products.amount}</span>
+                <span className="cart-delivery">Free Delivery</span>
                 <button
                   className="btn-addtocart"
                   onClick={() => addtoCart(products)}
@@ -89,8 +86,9 @@ const Productview = () => {
             )}
            {saleproducts && (
               <div className="col mt-5">
-                <h5 className="cart-amount">R{saleproducts.amount}</h5>
-                <p className="cart-delivery">Free Delivery</p>
+                <h5 className="cart-name">{saleproducts.title}</h5>
+                <span className="cart-amount">R{saleproducts.amount}</span>
+                <span className="cart-delivery">Free Delivery</span>
                 <button
                   className="btn-addtocart"
                   onClick={() => addtoCart(saleproducts)}
@@ -101,8 +99,9 @@ const Productview = () => {
             )}
             {productsmen && (
               <div className="col mt-5">
-                <h5 className="cart-amount">R{productsmen.amount}</h5>
-                <p className="cart-delivery">Free Delivery</p>
+               <h5 className="cart-name">{productsmen.title}</h5>
+                <span className="cart-amount">R{productsmen.amount}</span>
+                <span className="cart-delivery">Free Delivery</span>
                 <button
                   className="btn-addtocart"
                   onClick={() => addtoCart(productsmen)}
@@ -113,8 +112,9 @@ const Productview = () => {
             )}
             {productswomen && (
               <div className="col mt-5">
-                <h5 className="cart-amount">R{productswomen.amount}</h5>
-                <p className="cart-delivery">Free Delivery</p>
+                <h5 className="cart-name">{productswomen.title}</h5>
+                <span className="cart-amount">R{productswomen.amount}</span>
+                <span className="cart-delivery">Free Delivery</span>
                 <button
                   className="btn-addtocart"
                   onClick={() => addtoCart(productswomen)}

@@ -219,6 +219,7 @@ margin-top: 20px;
   height: 25rem;
   display: grid;
   grid-template-columns: auto auto;
+  background-image: linear-gradient(white, grey);
   -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
@@ -230,34 +231,22 @@ margin-top: 20px;
   margin-top: 30px;
 }
 
-.product-view-card .product-text{
-  margin-left: 400px;
-  margin-top: -320px;
+.product-view-card .cart-name{
+ color: black;
+ background-color: whitesmoke;
 } 
 
-.product-details {
-  width: 350px;
-  height: 300px;
-  margin-top: 30px;
-  margin-left: 50px;
-  border: 1px solid black;
-  -webkit-box-shadow: -1px 6px 10px -3px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 6px 10px -3px rgba(0, 0, 0, 0.75);
-  box-shadow: -1px 6px 10px -3px rgba(0, 0, 0, 0.75);
+.product-view-card .cart-amount {
+  color: black;
 }
 
-.product-details .cart-amount {
-  margin-left: 50px;
-}
-
-.product-details .cart-delivery {
-  margin-left: 50px;
+.product-view-card .cart-delivery {
+  color: black;
 }
 
 .btn-addtocart {
   background-color: blue;
   width: 200px;
-  margin-left: 80px;
   margin-top: 10px;
   border-radius: 5px;
   color: white;

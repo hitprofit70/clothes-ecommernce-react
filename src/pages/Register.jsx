@@ -1,24 +1,35 @@
-import React from 'react'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import { useState } from "react";
+import React from 'react';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+import { toast } from "react-toastify";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const Register = () => {
+  const registerForm = useRef();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const Register = () => {
-setFirstName(console.log(firstName));
+  const sendForm= (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_eu0h2qp",
+      "template_sv49alw",
+      registerForm.current,
+      "bG3aZ20mZmPzd2AeI"
+    );
+    toast("Your email was sent successfully");
 
   }
   return (
     <>
         <Navbar/>
         <div className='container mt-5'>
-        <form className="register-form">
+        <form ref={registerForm} className="register-form">
           <h1>Register</h1>
           <span className='brief-header mb-3'>Create </span>
           <div className='form-input'>
@@ -32,7 +43,7 @@ setFirstName(console.log(firstName));
           <br></br><br></br>
           <input type="text" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} placeholder="Confirm password" />
           </div>
-          <button className="registerBtn" onClick={Register}>Register</button>
+          <button className="registerBtn" onClick={sendForm}>Register</button>
         </form>
 
         <div className='display-3'>Your details</div>
