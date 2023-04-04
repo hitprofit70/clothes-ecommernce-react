@@ -18,16 +18,19 @@ const Login = () => {
       "service_eu0h2qp",
       "template_sv49alw",
       loginForm.current,
-      "bG3aZ20mZmPzd2AeI"
+      "bG3aZ20mZmPzd2AeI",
     );
     setEmail(email, password);
     console.log(email, password);
 
-    if (email & password) {
-      toast("All the fields are required");
-    } else {
+    if (email === "admins" && password === "users") {
       toast("Your email was sent successfully");
-    }
+      return false;
+
+  } else {
+    toast("All the fields are required");
+  }
+
   };
 
   return (

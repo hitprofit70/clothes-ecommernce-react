@@ -15,14 +15,21 @@ const AppState = ({ children }) => {
   const [cartData, setCartdata] = useState([]);
 
   const addtoCart = (products) => {
-    toast("Item added in the cart");
+
+    let cartData = 1;
+
+    if ( cartData <1 ) {
+         toast("Item added in the cart"); 
+    } else { 
+      toast("Item added already");
+    }
     setCartdata([...cartData, products]);
   };
 
   const removeItem = (product) => {
-    toast("Your product removed from the cart");
     let products = cartData.filter((x) => x.id !== product.id);
     setCartdata(products);
+    toast("Your product removed from the cart");
   };
 
 

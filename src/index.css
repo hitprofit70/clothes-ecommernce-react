@@ -231,19 +231,6 @@ margin-top: 20px;
   margin-top: 30px;
 }
 
-.product-view-card .cart-name{
- color: black;
- background-color: whitesmoke;
-} 
-
-.product-view-card .cart-amount {
-  color: black;
-}
-
-.product-view-card .cart-delivery {
-  color: black;
-}
-
 .btn-addtocart {
   background-color: blue;
   width: 200px;
