@@ -1,7 +1,6 @@
 import React from 'react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import { toast } from "react-toastify";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -22,9 +21,8 @@ const Register = () => {
       registerForm.current,
       "bG3aZ20mZmPzd2AeI"
     );
-    toast("Your email was sent successfully");
-
   }
+  
   return (
     <>
         <Navbar/>

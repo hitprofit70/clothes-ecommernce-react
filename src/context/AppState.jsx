@@ -13,17 +13,26 @@ const AppState = ({ children }) => {
   const [productsmen, setProductsmen] = useState(Mendata);
   const [productswomen, setProductswomen] = useState(Womendata);
   const [cartData, setCartdata] = useState([]);
+  // let isFound;
+
+
 
   const addtoCart = (products) => {
+ 
+    // for (let i = 0; i < cartData.length; i++) {
 
-    let cartData = 1;
+    //     isFound = cartData.some(element => {
+        
+    //     if (element.id === products.id) {
+    //       toast("Item added in the cart already");
+    //     }
+    //     return false;
+    //   });
 
-    if ( cartData <1 ) {
-         toast("Item added in the cart"); 
-    } else { 
-      toast("Item added already");
-    }
-    setCartdata([...cartData, products]);
+    // }
+         setCartdata([...cartData, products]);
+        toast("Item added in the cart");
+
   };
 
   const removeItem = (product) => {

@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
 import emailjs from "@emailjs/browser";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -22,14 +21,6 @@ const Login = () => {
     );
     setEmail(email, password);
     console.log(email, password);
-
-    if (email === "admins" && password === "users") {
-      toast("Your email was sent successfully");
-      return false;
-
-  } else {
-    toast("All the fields are required");
-  }
 
   };
 
@@ -61,7 +52,8 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Username or email"
-            /><br></br><br></br>
+            />
+            <br></br><br></br>
             <input
               type="text"
               value={password}

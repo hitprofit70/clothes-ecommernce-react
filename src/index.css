@@ -385,7 +385,12 @@ input {
 .register-form .registerBtn:hover {
   background: white;
   transition: 1s;
-} 
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
 /* end */
 
 
