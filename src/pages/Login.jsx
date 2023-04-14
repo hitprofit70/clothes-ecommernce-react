@@ -2,45 +2,28 @@ import React, { useState} from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-// import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  // const loginForm = useRef();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const clearInputs = () => {
+    setEmail('')
+    setPassword('')
+  }
 
-    try {
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        body: JSON.stringify({email, password}),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+  const handleSubmit = () => {
+    clearInputs();
 
-      if (response.ok) {
-        window.location.href = '/dashboard';
-      } else {
-
-        console.error('Login failed');
-      }
-    } catch (error) {
-      console.error('Login failed', error);
+    if (!email || !password) {
+      toast.error('All the inputs are required');
     }
 
-    // emailjs.sendForm(
-    //   "service_eu0h2qp",
-    //   "template_sv49alw",
-    //   loginForm.current,
-    //   "bG3aZ20mZmPzd2AeI",
-    // );
-    // setEmail(email, password);
-    // console.log(email, password);
+    if (email === password) {
+      toast.success('Login successfully');
+    }
 
   };
 
@@ -90,11 +73,19 @@ const Login = () => {
           </Link>
         </form>
 
-        <div className="display-3 mt-5">Your details</div>
+        {/* <div className="display-3 mt-5">Your details</div>
         <div className="row">
-          <h4>{email}</h4>
-          <h4>{password}</h4>
-        </div>
+        {localStorage.getItem('Email') && (
+            <div>
+              Email: <p>{localStorage.getItem('Name')}</p>
+            </div>
+          )}
+          {localStorage.getItem('Password') && (
+            <div>
+              Password: <p>{localStorage.getItem('Password')}</p>
+            </div>
+          )}
+        </div> */}
       </div>
       <Footer />
     </>

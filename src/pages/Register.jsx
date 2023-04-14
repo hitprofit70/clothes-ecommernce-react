@@ -1,33 +1,40 @@
 import React from 'react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import { useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
+import { useState} from "react";
+import  toast  from "react-hot-toast";
+// import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
-  const registerForm = useRef();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const sendForm= (e) => {
-    e.preventDefault();
+  // const clearInputs = () => {
+  //   setFirstName('')
+  //   setLastName('')
+  //   setEmail('')
+  //   setPassword('')
+  //   setConfirmPassword('')
+  // }
 
-    emailjs.sendForm(
-      "service_eu0h2qp",
-      "template_sv49alw",
-      registerForm.current,
-      "bG3aZ20mZmPzd2AeI"
-    );
+  const sendForm= () => {
+    // clearInputs();
+
+    if (!firstName || !lastName || !email || !password || !confirmPassword) {
+
+      toast.error('All the inputs are required');
+      return
+    }
   }
   
   return (
     <>
         <Navbar/>
         <div className='container mt-5'>
-        <form ref={registerForm} className="register-form">
+        <form className="register-form">
           <h1>Register</h1>
           <span className='brief-header mb-3'>Create </span>
           <div className='form-input'>
@@ -41,17 +48,8 @@ const Register = () => {
           <br></br><br></br>
           <input type="text" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} placeholder="Confirm password" />
           </div>
-          <button className="registerBtn" onClick={sendForm}>Register</button>
+          <button onClick={()=>sendForm()} className="registerBtn" >Register</button>
         </form>
-
-        <div className='display-3'>Your details</div>
-        <div className='row'>
-        <h4>{firstName}</h4>
-          <h4>{lastName}</h4>
-          <h4>{email}</h4>
-          <h4>{password}</h4>
-          <h4>{confirmPassword}</h4>
-        </div>
         </div>
         <Footer/>
     </>
