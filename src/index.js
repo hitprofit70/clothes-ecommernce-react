@@ -12,9 +12,11 @@ import Register from "./pages/Register";
 import Productview from "./pages/Productview";
 import CartBag from "./pages/CartBag";
 import Checkpage from "./pages/Checkpage";
+import PaymentPage from "./pages/PaymentPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppState from "./context/AppState";
 import { Toaster } from 'react-hot-toast';
+import DeliveryPage from "./pages/DeliveryPage";
 
 const router = createBrowserRouter([
   {
@@ -52,8 +54,16 @@ const router = createBrowserRouter([
         element: <CartBag />,
       },
       {
+        path: "/deliverypage",
+        element: <DeliveryPage />,
+      },
+      {
         path: "/checkpage",
         element: <Checkpage />,
+      },
+      {
+        path: "/paymentpage",
+        element: <PaymentPage />,
       },
     ],
   },

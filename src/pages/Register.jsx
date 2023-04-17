@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { useState } from "react";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -26,21 +26,21 @@ const Register = () => {
 
     if (!firstName || !lastName || !email || !password || !confirmPassword) {
       toast.error("All the inputs are required.");
-    };
+    }
 
-      if (password !== confirmPassword) {
-        toast.error("Password does not match.");
-      };
+    if (password !== confirmPassword) {
+      toast.error("Password does not match.");
+    }
 
-      if (firstName && lastName && email && password && confirmPassword) {
-        localStorage.setItem("FirstName", firstName);
-        localStorage.setItem("LasttName", lastName);
-        localStorage.setItem("Email", email);
-        localStorage.setItem("Password", password);
-        localStorage.setItem("ConfirmPassword", confirmPassword);
-        toast.success("Registered successfully.");
-        navigator("/login");
-      };
+    if (firstName && lastName && email && password && confirmPassword) {
+      localStorage.setItem("FirstName", firstName);
+      localStorage.setItem("LasttName", lastName);
+      localStorage.setItem("Email", email);
+      localStorage.setItem("Password", password);
+      localStorage.setItem("ConfirmPassword", confirmPassword);
+      toast.success("Registered successfully.");
+      navigator("/login");
+    }
   };
 
   return (

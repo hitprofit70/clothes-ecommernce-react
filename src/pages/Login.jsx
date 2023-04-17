@@ -28,7 +28,7 @@ const Login = () => {
 
     if (email === localEmail && password === localPassword) {
       toast.success('Login successfully');
-      navigator('/')
+      navigator('/deliverypage')
     } else {
     toast.error("Invalid email or password");
   }
