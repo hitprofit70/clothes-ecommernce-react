@@ -29,7 +29,7 @@ const Cartsummary = () => {
           <span className="col">R{totalCost}</span>
         </div>
         <div className="cart-checkout mt-3">
-          <Link to="/checkpage">
+          <Link to="/login">
           <button>Proceed to Checkout</button>
           </Link>
         </div>
