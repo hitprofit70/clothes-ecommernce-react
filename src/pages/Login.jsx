@@ -1,13 +1,13 @@
 import React, { useState} from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Link,  useNavigate } from "react-router-dom";
+import toast from 'react-hot-toast';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigator = useNavigate();
 
   const clearInputs = () => {
     setEmail('')
@@ -17,13 +17,21 @@ const Login = () => {
   const handleSubmit = () => {
     clearInputs();
 
+    const localEmail = localStorage.getItem('Email');
+    const localPassword = localStorage.getItem('Password');
+
     if (!email || !password) {
       toast.error('All the inputs are required');
     }
 
-    if (email === password) {
+  
+
+    if (email === localEmail && password === localPassword) {
       toast.success('Login successfully');
-    }
+      navigator('/')
+    } else {
+    toast.error("Invalid email or password");
+  }
 
   };
 

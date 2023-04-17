@@ -14,8 +14,7 @@ import CartBag from "./pages/CartBag";
 import Checkpage from "./pages/Checkpage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppState from "./context/AppState";
-// import { ToastContainer } from 'react-toastify';
-import Toast from "react-hot-toast";
+import { Toaster } from 'react-hot-toast';
 
 const router = createBrowserRouter([
   {
@@ -67,7 +66,7 @@ root.render(
    
     <React.StrictMode>
       <RouterProvider router={router} />
-      <Toast/>
+      <Toaster/>
     </React.StrictMode>
   </AppState>
 );
