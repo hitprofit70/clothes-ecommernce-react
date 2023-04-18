@@ -1,8 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const DeliveryForm = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    localStorage.setItem("dataKey", JSON.stringify(data));
+  }, [data]);
+
+  const addtoSave = () => {
+    const localData = localStorage.getItem("dataKey");
+    setData(localData, data);
+    console.log(localData, data);
+  };
+
   const [name, setName] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [streetA, setStreetA] = useState("");
@@ -14,9 +26,16 @@ const DeliveryForm = () => {
 
   // this function that help call
   const saveInfo = () => {
-
     // const localFirstName = localStorage.getItem('FirstName');
-    if (!name || !mobileNumber || !streetA || !complexbuilding || !citytown || !selectProvince || !postalCode) {
+    if (
+      !name ||
+      !mobileNumber ||
+      !streetA ||
+      !complexbuilding ||
+      !citytown ||
+      !selectProvince ||
+      !postalCode
+    ) {
       toast.error("All the inputs are required.");
     }
 
@@ -24,7 +43,15 @@ const DeliveryForm = () => {
     //   toast.error('Name does not match')
     // }
 
-    if (name && mobileNumber && streetA && complexbuilding && citytown && selectProvince && postalCode) {
+    if (
+      name &&
+      mobileNumber &&
+      streetA &&
+      complexbuilding &&
+      citytown &&
+      selectProvince &&
+      postalCode
+    ) {
       localStorage.setItem("Name", name);
       localStorage.setItem("MobileNumber", mobileNumber);
       localStorage.setItem("StreetA", streetA);
@@ -33,19 +60,18 @@ const DeliveryForm = () => {
       localStorage.setItem("SelectProvince", selectProvince);
       localStorage.setItem("PostalCode", postalCode);
       toast.success("Save.");
-      navigator('/paymentpage');
-
+      navigator("/paymentpage");
     }
-  }
+  };
 
   return (
     <div className="container">
       <h3 className="text-center">Delivery Addresses</h3>
       <div className="row delivery-form g-3 mt-5">
         <div className="col-md-6">
-          <label for="inputEmail4" className="form-label">
+          <div for="inputEmail4" className="form-div">
             Recipient Name
-          </label>
+          </div>
           <input
             type="text"
             value={name}
@@ -54,9 +80,9 @@ const DeliveryForm = () => {
           />
         </div>
         <div className="col-md-6">
-          <label for="inputPassword4" className="form-label">
+          <div for="inputPassword4" className="form-div">
             Recipient Mobile Number
-          </label>
+          </div>
           <input
             type="text"
             value={mobileNumber}
@@ -65,9 +91,9 @@ const DeliveryForm = () => {
           />
         </div>
         <div className="col-12">
-          <label for="inputAddress" className="form-label">
+          <div for="inputAddress" className="form-div">
             Street Address
-          </label>
+          </div>
           <input
             type="text"
             value={streetA}
@@ -77,9 +103,9 @@ const DeliveryForm = () => {
           />
         </div>
         <div className="col-12">
-          <label for="inputAddress2" className="form-label">
+          <div for="inputAddress2" className="form-div">
             Complex / Building
-          </label>
+          </div>
           <input
             type="text"
             value={complexbuilding}
@@ -89,9 +115,9 @@ const DeliveryForm = () => {
           />
         </div>
         <div className="col-md-6">
-          <label for="inputCity" className="form-label">
+          <div for="inputCity" className="form-div">
             City / Town
-          </label>
+          </div>
           <input
             type="text"
             value={citytown}
@@ -100,16 +126,16 @@ const DeliveryForm = () => {
           />
         </div>
         <div className="col-md-4">
-          <label for="inputState" className="form-label">
+          <div for="inputState" className="form-div">
             Select Province
-          </label>
+          </div>
           <select
             id="inputState"
             value={selectProvince}
             onChange={(e) => setSelectProvince(e.target.value)}
             className="form-select"
           >
-            <option selected>Choose...</option>
+            <option select="true">Choose...</option>
             <option>Gauteng</option>
             <option>KwaZulu-Natal</option>
             <option>Western Cape</option>
@@ -122,9 +148,9 @@ const DeliveryForm = () => {
           </select>
         </div>
         <div className="col-md-2">
-          <label for="inputZip" className="form-label">
+          <div for="inputZip" className="form-div">
             Postal Code
-          </label>
+          </div>
           <input
             type="number"
             value={postalCode}
@@ -134,11 +160,17 @@ const DeliveryForm = () => {
           />
         </div>
         <div className="col-12">
-          <button type="submit" className="btn btn-primary mb-3" onClick={saveInfo}>
+          <button
+            type="submit"
+            className="btn btn-primary mb-3"
+            onClick={saveInfo}
+          >
             Save
           </button>
         </div>
       </div>
+
+      <button onClick={addtoSave}>Save</button>
     </div>
   );
 };

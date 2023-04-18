@@ -1,36 +1,52 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { Link,  useNavigate } from "react-router-dom";
-import toast from 'react-hot-toast';
+import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import {
+  storage_exists,
+  read_fromStorage,
+  save_toLocalStorage,
+  check_emailInStorage,
+} from "../helper";
+import { USER_TABLE, CURRENT_USER } from "../constant";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigator = useNavigate();
+  const navigate = useNavigate();
 
-  const clearInputs = () => {
-    setEmail('');
-    setPassword('');
-  }
 
   const loginSend = () => {
-    clearInputs();
-
-    const localEmail = localStorage.getItem('Email');
-    const localPassword = localStorage.getItem('Password');
+    const user = { email, password };
 
     if (!email || !password) {
-      toast.error('All the inputs are required');
+      toast.error("All the inputs are required.");
     }
 
-    if (email === localEmail && password === localPassword) {
-      toast.success('Login successfully');
-      navigator('/deliverypage');
-    } else {
-    toast.error("Invalid email or password");
-  }
+    if (!storage_exists(USER_TABLE)) {
+      alert("You need to register first");
+      return;
+    }
 
+    if (!check_emailInStorage(email)) {
+      alert("You need to register first");
+      return;
+    }
+
+    let userTable = read_fromStorage(USER_TABLE);
+
+    const currenUser = userTable.find((table) => table.email == email);
+
+    if (currenUser.password === password) {
+      save_toLocalStorage(CURRENT_USER, user);
+
+      toast.success(`Welcome ${currenUser?.firstName}`);
+
+      setTimeout(navigate("/"), 2000);
+      return;
+    }
+    toast.error("Email or Password incorrect");
   };
 
   return (
@@ -62,7 +78,8 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
             />
-            <br></br><br></br>
+            <br></br>
+            <br></br>
             <input
               type="password"
               value={password}

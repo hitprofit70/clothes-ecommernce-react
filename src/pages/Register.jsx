@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import {
+  storage_exists,
+  read_fromStorage,
+  save_toLocalStorage,
+  check_emailInStorage,
+} from "../helper";
+import { USER_TABLE } from '../constant'
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -11,7 +18,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const navigator = useNavigate();
+  const navigate = useNavigate();
 
   const clearInputs = () => {
     setFirstName("");
@@ -22,7 +29,8 @@ const Register = () => {
   };
 
   const registerSend = () => {
-    clearInputs();
+    
+    const user = {firstName, lastName, email, password}
 
     if (!firstName || !lastName || !email || !password || !confirmPassword) {
       toast.error("All the inputs are required.");
@@ -30,17 +38,30 @@ const Register = () => {
 
     if (password !== confirmPassword) {
       toast.error("Password does not match.");
+      return;
     }
 
-    if (firstName && lastName && email && password && confirmPassword) {
-      localStorage.setItem("FirstName", firstName);
-      localStorage.setItem("LasttName", lastName);
-      localStorage.setItem("Email", email);
-      localStorage.setItem("Password", password);
-      localStorage.setItem("ConfirmPassword", confirmPassword);
-      toast.success("Registered successfully.");
-      navigator("/login");
+    if (!storage_exists(USER_TABLE)) {
+      let userData = [user];
+      save_toLocalStorage(USER_TABLE, userData);
+      toast.success(`${firstName} Registered`)
+      setTimeout(navigate("/login"), 2000);
+      return;
     }
+
+    if (check_emailInStorage(email)) {
+      toast.error(`${email} already exist`);
+      return;
+    }
+
+    let userTable = read_fromStorage(USER_TABLE);
+
+    userTable = [...userTable, user];
+
+    save_toLocalStorage(USER_TABLE, userTable);
+
+    setTimeout(navigate("/"), 2000);
+    clearInputs();
   };
 
   return (
@@ -76,7 +97,7 @@ const Register = () => {
             <br></br>
             <br></br>
             <input
-              type="text"
+              type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
@@ -84,7 +105,7 @@ const Register = () => {
             <br></br>
             <br></br>
             <input
-              type="text"
+              type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Confirm password"
