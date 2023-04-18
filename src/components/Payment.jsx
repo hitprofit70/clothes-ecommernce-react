@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Payment = () => {
 
@@ -25,8 +26,11 @@ const Payment = () => {
             <input type="number" value={cvv} onChange={(e) => setCvv(e.target.value)} placeholder="Cvv" />
             <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
         </div>
-        <div className="method-button mt-3">
-          <button className="btn-payment">Pay With Card</button>
+        <div className='text-center'>
+        <Link to="/deliverypage">
+          <button className="btn btn-primary mt-5">Back</button>
+          </Link>
+          <button className="btn btn-primary mt-5">Pay With Card</button>
         </div>
       </div>
     </div>

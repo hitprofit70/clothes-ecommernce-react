@@ -12,10 +12,10 @@ const DeliveryForm = () => {
   const [postalCode, setPostalCode] = useState("");
   const navigator = useNavigate();
 
+  // this function that help call
   const saveInfo = () => {
 
     // const localFirstName = localStorage.getItem('FirstName');
-
     if (!name || !mobileNumber || !streetA || !complexbuilding || !citytown || !selectProvince || !postalCode) {
       toast.error("All the inputs are required.");
     }

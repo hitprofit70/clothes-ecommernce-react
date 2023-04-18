@@ -405,6 +405,7 @@ input {
   height: 33rem;
   border-radius: 10px;
   margin-left: auto;
+  border: solid 1px black;
   background-image: linear-gradient( white, grey);
   -webkit-box-shadow: -1px 6px 10px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 6px 10px -3px rgba(0, 0, 0, 0.75);
