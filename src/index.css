@@ -432,3 +432,10 @@ input {
   margin-right: auto;
 }
 /* end */
+
+.delivery-form {
+  background: linear-gradient(grey,grey);
+  -webkit-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 6px 20px -3px rgba(0, 0, 0, 0.75);
+}

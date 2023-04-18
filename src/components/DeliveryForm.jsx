@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-const DeliveryAddress = () => {
+const DeliveryForm = () => {
   const [name, setName] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [streetA, setStreetA] = useState("");
@@ -14,21 +14,18 @@ const DeliveryAddress = () => {
 
   const saveInfo = () => {
 
-    const localFirstName = localStorage.getItem('FirstName');
+    // const localFirstName = localStorage.getItem('FirstName');
 
     if (!name || !mobileNumber || !streetA || !complexbuilding || !citytown || !selectProvince || !postalCode) {
       toast.error("All the inputs are required.");
     }
 
-    if (name !== localFirstName) {
-      toast.error('Name does not match')
-    }
-
-    if (name === localFirstName) {
-      toast.success('Name does match')
-    }
+    // if (name === localFirstName) {
+    //   toast.error('Name does not match')
+    // }
 
     if (name && mobileNumber && streetA && complexbuilding && citytown && selectProvince && postalCode) {
+      localStorage.setItem("Name", name);
       localStorage.setItem("MobileNumber", mobileNumber);
       localStorage.setItem("StreetA", streetA);
       localStorage.setItem("ComplexBuilding", complexbuilding);
@@ -36,7 +33,7 @@ const DeliveryAddress = () => {
       localStorage.setItem("SelectProvince", selectProvince);
       localStorage.setItem("PostalCode", postalCode);
       toast.success("Save.");
-      navigator('/paymentpage')
+      navigator('/paymentpage');
 
     }
   }
@@ -44,73 +41,73 @@ const DeliveryAddress = () => {
   return (
     <div className="container">
       <h3 className="text-center">Delivery Addresses</h3>
-      <div class="row g-3 mt-5">
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">
+      <div className="row delivery-form g-3 mt-5">
+        <div className="col-md-6">
+          <label for="inputEmail4" className="form-label">
             Recipient Name
           </label>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            class="form-control"
+            className="form-control"
           />
         </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">
+        <div className="col-md-6">
+          <label for="inputPassword4" className="form-label">
             Recipient Mobile Number
           </label>
           <input
             type="text"
             value={mobileNumber}
             onChange={(e) => setMobileNumber(e.target.value)}
-            class="form-control"
+            className="form-control"
           />
         </div>
-        <div class="col-12">
-          <label for="inputAddress" class="form-label">
+        <div className="col-12">
+          <label for="inputAddress" className="form-label">
             Street Address
           </label>
           <input
             type="text"
             value={streetA}
             onChange={(e) => setStreetA(e.target.value)}
-            class="form-control"
+            className="form-control"
             placeholder="Eg. 6 Sardust Avenue"
           />
         </div>
-        <div class="col-12">
-          <label for="inputAddress2" class="form-label">
+        <div className="col-12">
+          <label for="inputAddress2" className="form-label">
             Complex / Building
           </label>
           <input
             type="text"
             value={complexbuilding}
             onChange={(e) => setComplexBuilding(e.target.value)}
-            class="form-control"
+            className="form-control"
             placeholder="Complex or Building Name, unit number or floor"
           />
         </div>
-        <div class="col-md-6">
-          <label for="inputCity" class="form-label">
+        <div className="col-md-6">
+          <label for="inputCity" className="form-label">
             City / Town
           </label>
           <input
             type="text"
             value={citytown}
             onChange={(e) => setCityTown(e.target.value)}
-            class="form-control"
+            className="form-control"
           />
         </div>
-        <div class="col-md-4">
-          <label for="inputState" class="form-label">
+        <div className="col-md-4">
+          <label for="inputState" className="form-label">
             Select Province
           </label>
           <select
             id="inputState"
             value={selectProvince}
             onChange={(e) => setSelectProvince(e.target.value)}
-            class="form-select"
+            className="form-select"
           >
             <option selected>Choose...</option>
             <option>Gauteng</option>
@@ -124,20 +121,20 @@ const DeliveryAddress = () => {
             <option>Eastern Cape</option>
           </select>
         </div>
-        <div class="col-md-2">
-          <label for="inputZip" class="form-label">
+        <div className="col-md-2">
+          <label for="inputZip" className="form-label">
             Postal Code
           </label>
           <input
             type="number"
             value={postalCode}
             onChange={(e) => setPostalCode(e.target.value)}
-            class="form-control"
+            className="form-control"
             id="inputZip"
           />
         </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary" onClick={saveInfo}>
+        <div className="col-12">
+          <button type="submit" className="btn btn-primary mb-3" onClick={saveInfo}>
             Save
           </button>
         </div>
@@ -146,4 +143,4 @@ const DeliveryAddress = () => {
   );
 };
 
-export default DeliveryAddress;
+export default DeliveryForm;

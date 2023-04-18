@@ -10,11 +10,11 @@ const Login = () => {
   const navigator = useNavigate();
 
   const clearInputs = () => {
-    setEmail('')
-    setPassword('')
+    setEmail('');
+    setPassword('');
   }
 
-  const handleSubmit = () => {
+  const loginSend = () => {
     clearInputs();
 
     const localEmail = localStorage.getItem('Email');
@@ -24,11 +24,9 @@ const Login = () => {
       toast.error('All the inputs are required');
     }
 
-  
-
     if (email === localEmail && password === localPassword) {
       toast.success('Login successfully');
-      navigator('/deliverypage')
+      navigator('/deliverypage');
     } else {
     toast.error("Invalid email or password");
   }
@@ -36,10 +34,10 @@ const Login = () => {
   };
 
   return (
-    <>
+    <div>
       <Navbar />
       <div className="container mt-5">
-        <form onSubmit={handleSubmit} className="login-form">
+        <div className="login-form">
           <h1>Login</h1>
           <span>
             <svg
@@ -72,14 +70,14 @@ const Login = () => {
               placeholder="Password"
             />
           </div>
-          <button className="loginBtn">
+          <button className="loginBtn" onClick={loginSend}>
             Login In
           </button>
           <span className="forget-password">Forget password?</span>
           <Link to="/register" className="create-account">
             Don't have an account? Register here.
           </Link>
-        </form>
+        </div>
 
         {/* <div className="display-3 mt-5">Your details</div>
         <div className="row">
@@ -96,7 +94,7 @@ const Login = () => {
         </div> */}
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

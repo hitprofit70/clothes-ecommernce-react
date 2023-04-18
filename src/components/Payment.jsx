@@ -1,6 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { useState } from 'react';
 
 const Payment = () => {
+
+  const [nameOnCard, setNameonCard] = useState("");
+  const [cardHolder, setCardHolder] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+  const [cvv, setCvv] = useState("");
+  const [date, setDate] = useState("");
   return (
     <div className='container mt-5'>
     <h4 className="header text-center">Payment Method </h4>
@@ -12,11 +19,11 @@ const Payment = () => {
           alt=""
         />
         <div className="input-info text-center mt-5">
-            <input type="text" placeholder="Name on card" />
-            <input type="text" placeholder="Cardholder name" />
-            <input type="number" placeholder="Card number" />
-            <input type="number" placeholder="Cvv" />
-            <input type="date" />
+            <input type="text" value={nameOnCard} onChange={(e) => setNameonCard(e.target.value)} placeholder="Name on card" />
+            <input type="text" value={cardHolder} onChange={(e) => setCardHolder(e.target.value)} placeholder="Cardholder name" />
+            <input type="number" value={cardNumber} onChange={(e) => setCardNumber(e.target.value)} placeholder="Card number" />
+            <input type="number" value={cvv} onChange={(e) => setCvv(e.target.value)} placeholder="Cvv" />
+            <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
         </div>
         <div className="method-button mt-3">
           <button className="btn-payment">Pay With Card</button>
@@ -24,6 +31,12 @@ const Payment = () => {
       </div>
     </div>
   </div>
+  <div className='display'>
+    <h2>Your bank on details</h2>
+      <h4>{nameOnCard}</h4>
+      <h4>{cardHolder}</h4>
+      <h4>{cardNumber}</h4>
+    </div>
 </div>
   )
 }
