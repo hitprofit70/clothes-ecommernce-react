@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {
   storage_exists,
   read_fromStorage,
   save_toLocalStorage,
   check_emailInStorage,
 } from "../helper";
-import { USER_TABLE } from '../constant'
+import { USER_TABLE } from '../constant';
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -34,6 +34,7 @@ const Register = () => {
 
     if (!firstName || !lastName || !email || !password || !confirmPassword) {
       toast.error("All the inputs are required.");
+      return;
     }
 
     if (password !== confirmPassword) {
@@ -44,7 +45,7 @@ const Register = () => {
     if (!storage_exists(USER_TABLE)) {
       let userData = [user];
       save_toLocalStorage(USER_TABLE, userData);
-      toast.success(`${firstName} Registered`)
+      toast.success(`${firstName} registered succesfully`)
       setTimeout(navigate("/login"), 2000);
       return;
     }
@@ -114,6 +115,11 @@ const Register = () => {
           <button onClick={registerSend} className="registerBtn">
             Register
           </button>
+          <div className="login">
+            <Link to="/login">
+            <span>Already login? Create register</span>
+            </Link>
+          </div>
         </div>
       </div>
       <Footer />

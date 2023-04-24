@@ -1,19 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const DeliveryForm = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    localStorage.setItem("dataKey", JSON.stringify(data));
-  }, [data]);
-
-  const addtoSave = () => {
-    const localData = localStorage.getItem("dataKey");
-    setData(localData, data);
-    console.log(localData, data);
-  };
 
   const [name, setName] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
@@ -26,7 +15,6 @@ const DeliveryForm = () => {
 
   // this function that help call
   const saveInfo = () => {
-    // const localFirstName = localStorage.getItem('FirstName');
     if (
       !name ||
       !mobileNumber ||
@@ -38,11 +26,6 @@ const DeliveryForm = () => {
     ) {
       toast.error("All the inputs are required.");
     }
-
-    // if (name === localFirstName) {
-    //   toast.error('Name does not match')
-    // }
-
     if (
       name &&
       mobileNumber &&
@@ -59,7 +42,7 @@ const DeliveryForm = () => {
       localStorage.setItem("CityTown", citytown);
       localStorage.setItem("SelectProvince", selectProvince);
       localStorage.setItem("PostalCode", postalCode);
-      toast.success("Save.");
+      toast.success("Delivery successfully.");
       navigator("/paymentpage");
     }
   };
@@ -169,8 +152,6 @@ const DeliveryForm = () => {
           </button>
         </div>
       </div>
-
-      <button onClick={addtoSave}>Save</button>
     </div>
   );
 };

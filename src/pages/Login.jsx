@@ -22,6 +22,7 @@ const Login = () => {
 
     if (!email || !password) {
       toast.error("All the inputs are required.");
+      return;
     }
 
     if (!storage_exists(USER_TABLE)) {
