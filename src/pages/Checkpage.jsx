@@ -21,7 +21,7 @@ const Checkpage = () => {
   }, [cartData]);
 
   return (
-    <>
+    <div>
       <Navbar />
       <div className="container mt-5">
         <div className="deliver-method">
@@ -41,7 +41,7 @@ const Checkpage = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
