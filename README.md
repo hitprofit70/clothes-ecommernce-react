@@ -1,4 +1,4 @@
-Link[http://hitprofit70.github.io/clothes-ecommernce-react/]
+[Link](https://hitprofit70.github.io/clothes-ecommernce-react/)
 
 
 # Getting Started with Create React App
