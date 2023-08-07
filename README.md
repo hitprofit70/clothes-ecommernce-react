@@ -1,4 +1,4 @@
-[link:http://hitprofit70.github.io/clothes-ecommernce-react/]
+Link[http://hitprofit70.github.io/clothes-ecommernce-react/]
 
 
 # Getting Started with Create React App
